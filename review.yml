@@ -1,0 +1,49 @@
+---
+name: Tecnológico de Monterrey
+description: Tecnológico de Monterrey public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/tecnologico-de-monterrey/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 3
+    summary: >-
+      Verified a genuine institutional API presence with no fabrication. The
+      datahub.tec.mx research open-data repository is a live, public Dataverse
+      5.9 instance: /api/info/version returned version 5.9, /api/search returned
+      200, and the OAI-PMH endpoint returned a valid Identify response naming the
+      "Tecnológico de Monterrey Dataverse OAI Archive". The api.tec.mx developer
+      portal is real and hosts multiple named API products (student grades,
+      academic progress, student management, human-capital management, billing)
+      but is gated behind login/subscription approval and refused automated
+      fetches (connection reset / HTTP 000 to programmatic clients) while
+      resolving in browsers; its endpoints could not be independently verified.
+      GitHub org, LinkedIn school page, and official site all confirmed live.
+    endpoints:
+      - url: https://datahub.tec.mx/api/info/version
+        status: 200
+        note: Dataverse Native REST API; returned {"version":"5.9","build":"750-fb24c87"}
+      - url: https://datahub.tec.mx/api/search?q=*
+        status: 200
+        note: Dataverse search API responds publicly
+      - url: https://datahub.tec.mx/oai?verb=Identify
+        status: 200
+        note: OAI-PMH 2.0; repositoryName "Tecnológico de Monterrey Dataverse OAI Archive"
+      - url: https://datahub.tec.mx/
+        status: 200
+        note: Dataverse open research data hub (Apache/Ubuntu)
+      - url: https://repositorio.tec.mx/oai/request?verb=Identify
+        status: 403
+        note: RITEC DSpace OAI-PMH; listed in OpenDOAR/ROAR/Sherpa but blocks programmatic clients (WAF)
+      - url: https://api.tec.mx/tec-de-monterrey/api/
+        status: 0
+        note: Developer portal; resolves in browser but refused programmatic fetch (gated, bot-protected)
+      - url: https://tec.mx/en
+        status: 200
+        note: Official institutional website
+      - url: https://github.com/tecnologico-de-monterrey-oficial
+        status: 200
+        note: Verified official GitHub organization (~33 repos)
+      - url: https://www.linkedin.com/school/tecdemonterrey/
+        status: 200
+        note: Official LinkedIn school page

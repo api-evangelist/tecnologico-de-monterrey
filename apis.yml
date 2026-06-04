@@ -1,0 +1,116 @@
+---
+aid: tecnologico-de-monterrey
+name: Tecnológico de Monterrey
+description: >-
+  Tecnológico de Monterrey (ITESM) is a private Mexican multi-campus university
+  system headquartered in Monterrey, ranked #185 in the QS World University
+  Rankings 2025. It operates a public API developer portal at api.tec.mx that
+  exposes institutional API products (such as student grade/academic-progress,
+  student management, human-capital management, and billing APIs) behind
+  registration and subscription approval, and a public Dataverse-based research
+  open-data repository at datahub.tec.mx run by its Institute for the Future of
+  Education, which serves a public Native REST API and an OAI-PMH metadata
+  endpoint.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/tecnologico-de-monterrey/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Open Data
+  - Research Data
+  - Mexico
+  - Dataverse
+  - OAI-PMH
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: tecnologico-de-monterrey:datahub-rest
+    name: Tec de Monterrey Dataverse Native REST API
+    description: >-
+      Public Native REST API of the Tecnológico de Monterrey research open-data
+      repository (datahub.tec.mx), running Dataverse 5.9. Supports dataset and
+      collection search and metadata retrieval. Endpoints such as
+      /api/info/version and /api/search respond publicly (HTTP 200); some
+      write/ingest operations require an API token.
+    humanURL: https://datahub.tec.mx/
+    baseURL: https://datahub.tec.mx/api
+    tags: [ Open Data, Research Data, Dataverse, REST ]
+    properties:
+      - type: Documentation
+        url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - aid: tecnologico-de-monterrey:datahub-oai
+    name: Tec de Monterrey Dataverse OAI-PMH Endpoint
+    description: >-
+      Public OAI-PMH 2.0 metadata harvesting endpoint for the Tecnológico de
+      Monterrey Dataverse OAI Archive. Verified live via the Identify verb
+      (repositoryName "Tecnológico de Monterrey Dataverse OAI Archive";
+      adminEmail research.datahub@servicios.tec.mx). Supports standard verbs
+      (Identify, ListRecords, ListIdentifiers, GetRecord) for harvesting dataset
+      metadata.
+    humanURL: https://datahub.tec.mx/
+    baseURL: https://datahub.tec.mx/oai
+    tags: [ Open Data, Research Data, OAI-PMH, Metadata Harvesting ]
+    properties:
+      - type: Documentation
+        url: https://guides.dataverse.org/en/5.9/api/oai.html
+  - aid: tecnologico-de-monterrey:ritec-oai
+    name: RITEC Institutional Repository OAI-PMH (DSpace)
+    description: >-
+      RITEC, the Tecnológico de Monterrey institutional repository
+      (repositorio.tec.mx), is a DSpace platform holding 80,000+ theses,
+      articles, and academic works. It is listed in OpenDOAR, ROAR, and Sherpa
+      with a documented OAI-PMH endpoint at /oai/request. Note: the host
+      returned HTTP 403 to automated/programmatic clients during verification
+      (WAF/bot protection), so the endpoint was not independently confirmed
+      live, though registry records document it.
+    humanURL: https://repositorio.tec.mx/
+    baseURL: https://repositorio.tec.mx/oai/request
+    tags: [ Institutional Repository, DSpace, OAI-PMH, Open Access, Theses ]
+    properties:
+      - type: Documentation
+        url: https://v2.sherpa.ac.uk/id/repository/3460
+  - aid: tecnologico-de-monterrey:developer-portal
+    name: Tec de Monterrey API Developer Portal (Institutional APIs)
+    description: >-
+      Institutional API developer portal at api.tec.mx hosting named API
+      products including academic progress / student grade APIs ("Boleta de
+      Calificaciones del Alumno", "Gestión del Progreso Académico del
+      Estudiante"), student management ("Gestión de Estudiantes"), human-capital
+      management ("Gestión de Capital Humano"), and billing ("Proveedor
+      Facturacion"). Access is gated: it requires account registration and
+      per-product subscription approval, and is not openly browsable without
+      authentication. No public endpoints were independently verified.
+    humanURL: https://api.tec.mx/tec-de-monterrey/api/
+    tags: [ Education, Student Information System, Academic, Gated ]
+    properties:
+      - type: Documentation
+        url: https://api.tec.mx/tec-de-monterrey/api/
+      - type: SignUp
+        url: https://api.tec.mx/tec-de-monterrey/api/user/login
+common:
+  - type: Website
+    url: https://tec.mx/en
+  - type: GitHub
+    url: https://github.com/tecnologico-de-monterrey-oficial
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/tecdemonterrey/
+  - type: DeveloperPortal
+    url: https://api.tec.mx/tec-de-monterrey/api/
+  - type: Twitter
+    url: https://x.com/tecdemonterrey
+  - type: Plans
+    url: plans/tecnologico-de-monterrey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/tecnologico-de-monterrey-rate-limits.yml
+  - type: FinOps
+    url: finops/tecnologico-de-monterrey-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
