@@ -1,0 +1,47 @@
+vocabulary:
+  name: Tecnológico de Monterrey Dataverse Vocabulary
+  description: >-
+    Controlled vocabulary of the key domain terms used by the Tecnológico de
+    Monterrey research open-data repository Native REST API (datahub.tec.mx),
+    running Dataverse 5.9. Terms are drawn from the live OpenAPI description and
+    observed API responses.
+  version: "5.9"
+  terms:
+    - term: Dataverse
+      definition: >-
+        A container (collection) that holds datasets and/or other Dataverses;
+        the top-level organizational unit of the repository.
+      tags: [container, collection, organization]
+    - term: Dataset
+      definition: >-
+        A container for research data that groups data files together with
+        descriptive metadata and one or more versions.
+      tags: [core, research-data]
+    - term: DatasetVersion
+      definition: >-
+        A specific, citable version of a dataset, identified by a major and
+        minor version number and a version state (e.g. RELEASED, DRAFT).
+      tags: [versioning, citation]
+    - term: DataFile
+      definition: A single uploaded file belonging to a dataset version.
+      tags: [file, content]
+    - term: MetadataBlock
+      definition: >-
+        A named grouping of dataset metadata fields (e.g. citation,
+        geospatial, social science) attached to a Dataverse or dataset.
+      tags: [metadata]
+    - term: PersistentIdentifier
+      definition: >-
+        A globally unique, resolvable identifier (e.g. a DOI such as
+        doi:10.57687/FK2/PWJRSJ) assigned to datasets and files.
+      tags: [identifier, doi, citation]
+    - term: SearchItem
+      definition: >-
+        A single result returned by the /api/v1/search endpoint, describing a
+        dataset, dataverse, or file.
+      tags: [search, discovery]
+    - term: Guestbook
+      definition: >-
+        A form configuration that collects information from users prior to
+        downloading dataset files.
+      tags: [access, governance]

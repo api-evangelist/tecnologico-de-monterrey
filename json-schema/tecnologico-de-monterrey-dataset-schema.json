@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://datahub.tec.mx/schema/dataset.json",
+  "title": "Dataset",
+  "description": "A Dataverse dataset object as described by the Tecnológico de Monterrey Dataverse 5.9 Native REST API (datahub.tec.mx). Properties derived from the live OpenAPI component schema 'Dataset'.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "number", "description": "Internal numeric database identifier of the dataset." },
+    "identifier": { "type": "string", "description": "Persistent identifier fragment (e.g. DOI suffix)." },
+    "protocol": { "type": "string", "description": "Persistent identifier protocol (e.g. doi)." },
+    "authority": { "type": "string", "description": "Persistent identifier authority." },
+    "publicationDate": { "type": "string", "format": "date-time", "description": "Date the dataset was published." },
+    "metadataLanguage": { "type": "string", "description": "Language of the dataset metadata." },
+    "storageDriver": { "type": "string", "description": "Storage driver identifier." },
+    "harvestIdentifier": { "type": "string", "description": "Identifier assigned when the dataset was harvested." },
+    "useGenericThumbnail": { "type": "boolean", "description": "Whether a generic thumbnail is used." },
+    "fileAccessRequest": { "type": "boolean", "description": "Whether file access requests are enabled." },
+    "versions": {
+      "type": "array",
+      "description": "Versions of the dataset.",
+      "items": { "$ref": "#/definitions/DatasetVersion" }
+    }
+  },
+  "definitions": {
+    "DatasetVersion": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "version": { "type": "number" },
+        "versionNumber": { "type": "number" },
+        "minorVersionNumber": { "type": "number" },
+        "versionNote": { "type": "string" },
+        "UNF": { "type": "string" },
+        "createTime": { "type": "string", "format": "date-time" },
+        "lastUpdateTime": { "type": "string", "format": "date-time" },
+        "releaseTime": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

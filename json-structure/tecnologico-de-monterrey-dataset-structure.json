@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://datahub.tec.mx/structure/dataset.json",
+  "name": "Dataset",
+  "description": "JSON Structure for a Tecnológico de Monterrey Dataverse dataset (datahub.tec.mx, Dataverse 5.9).",
+  "type": "object",
+  "properties": {
+    "id": { "type": "int64", "description": "Internal numeric identifier." },
+    "identifier": { "type": "string" },
+    "protocol": { "type": "string" },
+    "authority": { "type": "string" },
+    "publicationDate": { "type": "string", "format": "date-time" },
+    "metadataLanguage": { "type": "string" },
+    "useGenericThumbnail": { "type": "boolean" },
+    "fileAccessRequest": { "type": "boolean" },
+    "versions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "name": "DatasetVersion",
+        "properties": {
+          "id": { "type": "int64" },
+          "versionNumber": { "type": "int32" },
+          "minorVersionNumber": { "type": "int32" },
+          "versionState": { "type": "string" },
+          "UNF": { "type": "string" },
+          "createTime": { "type": "string", "format": "date-time" },
+          "lastUpdateTime": { "type": "string", "format": "date-time" },
+          "releaseTime": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
+  },
+  "required": ["id"]
+}

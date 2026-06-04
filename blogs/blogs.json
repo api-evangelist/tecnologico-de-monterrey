@@ -1,0 +1,14 @@
+{
+  "repo": "tecnologico-de-monterrey",
+  "feeds": [
+    {
+      "source": "https://datahub.tec.mx/",
+      "feed_url": "https://datahub.tec.mx/",
+      "title": "Tecnológico de Monterrey Dataverse (datahub.tec.mx)",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-06-03T00:00:00Z"
+}

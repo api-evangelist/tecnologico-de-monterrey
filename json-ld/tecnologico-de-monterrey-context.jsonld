@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "tec": "https://datahub.tec.mx/vocab#",
+    "@vocab": "https://datahub.tec.mx/vocab#",
+    "name": "schema:name",
+    "url": "schema:url",
+    "description": "schema:description",
+    "publisher": "schema:publisher",
+    "datePublished": "schema:datePublished",
+    "identifier": "schema:identifier",
+    "Organization": "schema:CollegeOrUniversity",
+    "Dataset": "schema:Dataset",
+    "Dataverse": {
+      "@id": "schema:DataCatalog",
+      "@type": "@id"
+    },
+    "DataFile": "schema:DataDownload",
+    "global_id": "schema:identifier",
+    "published_at": "schema:datePublished",
+    "name_of_dataverse": "schema:includedInDataCatalog",
+    "versions": "tec:versions",
+    "versionNumber": "schema:version"
+  },
+  "@type": "schema:CollegeOrUniversity",
+  "name": "Tecnológico de Monterrey",
+  "alternateName": "ITESM",
+  "url": "https://tec.mx/en",
+  "sameAs": [
+    "https://datahub.tec.mx/",
+    "https://repositorio.tec.mx/",
+    "https://api.tec.mx/tec-de-monterrey/api/"
+  ]
+}

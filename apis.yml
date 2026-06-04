@@ -43,6 +43,16 @@ apis:
     properties:
       - type: Documentation
         url: https://guides.dataverse.org/en/5.9/api/native-api.html
+      - type: OpenAPI
+        url: openapi/tecnologico-de-monterrey-datahub-rest.yaml
+      - type: JSONSchema
+        url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+      - type: x-vocabulary
+        url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+      - type: x-rules
+        url: rules/tecnologico-de-monterrey-rules.yml
+      - type: x-json-ld
+        url: json-ld/tecnologico-de-monterrey-context.jsonld
   - aid: tecnologico-de-monterrey:datahub-oai
     name: Tec de Monterrey Dataverse OAI-PMH Endpoint
     description: >-

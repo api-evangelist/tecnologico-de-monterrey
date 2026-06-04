@@ -1,0 +1,38 @@
+extends: [[spectral:oas, off]]
+formats: [oas3]
+documentationUrl: https://guides.dataverse.org/en/5.9/api/native-api.html
+rules:
+  tec-info-title:
+    description: API document must have a title.
+    given: $.info.title
+    severity: error
+    then:
+      function: truthy
+  tec-servers-public-host:
+    description: Server URLs should use the public datahub.tec.mx host, not internal itesm.mx deployment hosts.
+    given: $.servers[*].url
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "datahub\\.tec\\.mx"
+  tec-paths-versioned:
+    description: Dataverse Native API paths are versioned under /api/v1/.
+    given: $.paths[*]~
+    severity: info
+    then:
+      function: pattern
+      functionOptions:
+        match: "^/api/v1/"
+  tec-operation-id:
+    description: Every operation should declare an operationId.
+    given: $.paths[*][get,post,put,delete,patch].operationId
+    severity: warn
+    then:
+      function: truthy
+  tec-response-defined:
+    description: Every operation should define at least one response.
+    given: $.paths[*][get,post,put,delete,patch].responses
+    severity: error
+    then:
+      function: truthy

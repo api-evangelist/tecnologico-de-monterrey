@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://datahub.tec.mx/schema/searchresult.json",
+  "title": "SearchResult",
+  "description": "Response envelope returned by GET /api/v1/search on the Tecnológico de Monterrey Dataverse Native REST API (datahub.tec.mx). Item fields derived from the live response of /api/search?q=*&type=dataset.",
+  "type": "object",
+  "properties": {
+    "status": { "type": "string", "description": "Request status, e.g. OK or ERROR." },
+    "data": {
+      "type": "object",
+      "properties": {
+        "q": { "type": "string", "description": "Echoed search query." },
+        "total_count": { "type": "integer", "description": "Total number of matching results." },
+        "start": { "type": "integer", "description": "Zero-based offset of the first returned item." },
+        "spelling_alternatives": { "type": "object", "description": "Suggested spelling alternatives." },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/SearchItem" }
+        }
+      },
+      "required": ["q", "total_count", "items"]
+    }
+  },
+  "required": ["status", "data"],
+  "definitions": {
+    "SearchItem": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string", "description": "Result type: dataset, dataverse, or file." },
+        "url": { "type": "string", "format": "uri" },
+        "global_id": { "type": "string", "description": "Persistent identifier, e.g. doi:10.57687/FK2/PWJRSJ." },
+        "description": { "type": "string" },
+        "published_at": { "type": "string", "format": "date-time" },
+        "publisher": { "type": "string" },
+        "citationHtml": { "type": "string" },
+        "citation": { "type": "string" },
+        "identifier_of_dataverse": { "type": "string" },
+        "name_of_dataverse": { "type": "string" }
+      },
+      "required": ["name", "type"]
+    }
+  }
+}
