@@ -100,7 +100,7 @@ apis:
     properties:
       - type: Documentation
         url: https://api.tec.mx/tec-de-monterrey/api/
-      - type: SignUp
+      - type: Signup
         url: https://api.tec.mx/tec-de-monterrey/api/user/login
 common:
   - type: Website
