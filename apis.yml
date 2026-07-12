@@ -103,6 +103,8 @@ apis:
       - type: Signup
         url: https://api.tec.mx/tec-de-monterrey/api/user/login
 common:
+  - type: DomainSecurity
+    url: security/tecnologico-de-monterrey-domain-security.yml
   - type: Website
     url: https://tec.mx/en
   - type: GitHub
