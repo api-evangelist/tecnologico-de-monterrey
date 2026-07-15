@@ -103,6 +103,8 @@ apis:
       - type: Signup
         url: https://api.tec.mx/tec-de-monterrey/api/user/login
 common:
+  - type: AgenticAccess
+    url: agentic-access/tecnologico-de-monterrey-agentic-access.yml
   - type: DomainSecurity
     url: security/tecnologico-de-monterrey-domain-security.yml
   - type: Website
