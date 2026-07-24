@@ -1,0 +1,309 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Files API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Files
+paths:
+  /api/v1/files/{id}/metadata:
+    get:
+      operationId: getFileMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+    post:
+      operationId: updateFileMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+  /api/v1/files/{id}/metadata/draft:
+    get:
+      operationId: getFileMetadataDraft
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+  /api/v1/files/{id}/prov-freeform:
+    get:
+      operationId: getProvFreeForm
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+    post:
+      operationId: addProvFreeForm
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+  /api/v1/files/{id}/prov-json:
+    get:
+      operationId: getProvJson
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+    post:
+      operationId: addProvJson
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entityName
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+    delete:
+      operationId: deleteProvJson
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+  /api/v1/files/{id}/redetect:
+    post:
+      operationId: redetectDatafile
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dryRun
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+  /api/v1/files/{id}/reingest:
+    post:
+      operationId: reingest
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+  /api/v1/files/{id}/replace:
+    post:
+      operationId: replaceFileInDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+  /api/v1/files/{id}/restrict:
+    put:
+      operationId: restrictFileInDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files
+  /api/v1/files/{id}/uningest:
+    post:
+      operationId: uningestDatafile
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Files

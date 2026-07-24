@@ -1,0 +1,712 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Info API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Info
+paths:
+  /api/v1/info/apiTermsOfUse:
+    get:
+      operationId: getTermsOfUse
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/datasets:
+    get:
+      operationId: getDatasetsAllTime
+      parameters:
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/datasets/bySubject:
+    get:
+      operationId: getDatasetsBySubject
+      parameters:
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/datasets/bySubject/toMonth/{yyyymm}:
+    get:
+      operationId: getDatasetsBySubjectToMonth
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/datasets/monthly:
+    get:
+      operationId: getDatasetsTimeSeriest
+      parameters:
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/datasets/pastDays/{days}:
+    get:
+      operationId: getDatasetsPastDays
+      parameters:
+      - name: days
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/datasets/toMonth/{yyyymm}:
+    get:
+      operationId: getDatasetsToMonth
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dataLocation
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/dataverses:
+    get:
+      operationId: getDataversesAllTime
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/dataverses/byCategory:
+    get:
+      operationId: getDataversesByCategory
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/dataverses/bySubject:
+    get:
+      operationId: getDataversesBySubject
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/dataverses/monthly:
+    get:
+      operationId: getDataversesTimeSeries
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/dataverses/pastDays/{days}:
+    get:
+      operationId: getDataversesPastDays
+      parameters:
+      - name: days
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/dataverses/toMonth/{yyyymm}:
+    get:
+      operationId: getDataversesToMonth
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/downloads:
+    get:
+      operationId: getDownloadsAllTime
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/downloads/monthly:
+    get:
+      operationId: getDownloadsTimeSeries
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/downloads/pastDays/{days}:
+    get:
+      operationId: getDownloadsPastDays
+      parameters:
+      - name: days
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/downloads/toMonth/{yyyymm}:
+    get:
+      operationId: getDownloadsToMonth
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/filedownloads:
+    get:
+      operationId: getFileDownloadsAllTime
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/filedownloads/monthly:
+    get:
+      operationId: getFileDownloadsTimeSeries
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/filedownloads/toMonth/{yyyymm}:
+    get:
+      operationId: getFileDownloadsToMonth
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/files:
+    get:
+      operationId: getFilesAllTime
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/files/byType:
+    get:
+      operationId: getFilesByType
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/files/byType/monthly:
+    get:
+      operationId: getFilesByTypeTimeSeries
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/files/monthly:
+    get:
+      operationId: getFilesTimeSeries
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/files/pastDays/{days}:
+    get:
+      operationId: getFilesPastDays
+      parameters:
+      - name: days
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/files/toMonth/{yyyymm}:
+    get:
+      operationId: getFilesToMonth
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/makeDataCount/{metric}:
+    get:
+      operationId: getMakeDataCountMetricCurrentMonth
+      parameters:
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/makeDataCount/{metric}/monthly:
+    get:
+      operationId: getMakeDataCountMetricTimeSeries
+      parameters:
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/makeDataCount/{metric}/toMonth/{yyyymm}:
+    get:
+      operationId: getMakeDataCountMetricToMonth
+      parameters:
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/tree:
+    get:
+      operationId: getDataversesTree
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/tree/toMonth/{yyyymm}:
+    get:
+      operationId: getDataversesTreeToMonth
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/uniquedownloads:
+    get:
+      operationId: getUniqueDownloadsAllTime
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/uniquedownloads/monthly:
+    get:
+      operationId: getUniqueDownloadsTimeSeries
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/uniquedownloads/toMonth/{yyyymm}:
+    get:
+      operationId: getUniqueDownloadsToMonth
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/uniquefiledownloads:
+    get:
+      operationId: getUniqueFileDownloadsAllTime
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/uniquefiledownloads/monthly:
+    get:
+      operationId: getUniqueFileDownloadsTimeSeries
+      parameters:
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/metrics/uniquefiledownloads/toMonth/{yyyymm}:
+    get:
+      operationId: getUniqueFileDownloadsToMonth
+      parameters:
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: parentAlias
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/server:
+    get:
+      operationId: getServer
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/settings/:DatasetPublishPopupCustomText:
+    get:
+      operationId: getDatasetPublishPopupCustomText
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info
+  /api/v1/info/version:
+    get:
+      operationId: getInfo
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Info

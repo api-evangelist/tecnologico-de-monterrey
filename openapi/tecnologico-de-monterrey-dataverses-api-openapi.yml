@@ -1,0 +1,870 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Dataverses API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Dataverses
+paths:
+  /api/v1/dataverses:
+    post:
+      operationId: addRoot
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}:
+    get:
+      operationId: viewDataverse
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    post:
+      operationId: addDataverse
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    delete:
+      operationId: deleteDataverse
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/actions/:publish:
+    post:
+      operationId: publishDataverse
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/assignments:
+    get:
+      operationId: listAssignments
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    post:
+      operationId: createAssignment
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/RoleAssignmentDTO'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/assignments/{id}:
+    delete:
+      operationId: deleteAssignment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/contents:
+    get:
+      operationId: listContent
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/datasets:
+    post:
+      operationId: createDatasetFromJsonLd
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody: {}
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/datasets/:import:
+    post:
+      operationId: importDataset
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pid
+        in: query
+        schema:
+          type: string
+      - name: release
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/datasets/:importddi:
+    post:
+      operationId: importDatasetDdi
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pid
+        in: query
+        schema:
+          type: string
+      - name: release
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/datasets/:startmigration:
+    post:
+      operationId: recreateDataset
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody: {}
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/defaultContributorRole/{roleAlias}:
+    put:
+      operationId: updateDefaultContributorRole
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: roleAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/facets:
+    get:
+      operationId: listFacets
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    post:
+      operationId: setFacets
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/groups:
+    get:
+      operationId: listGroups
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    post:
+      operationId: createExplicitGroup
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ExplicitGroupDTO'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/groups/{aliasInOwner}:
+    get:
+      operationId: getGroupByOwnerAndAliasInOwner
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    put:
+      operationId: updateGroup
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ExplicitGroupDTO'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    delete:
+      operationId: deleteGroup
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees:
+    post:
+      operationId: addRoleAssingees
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  '/api/v1/dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier: .*}':
+    put:
+      operationId: addRoleAssingee
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: roleAssigneeIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    delete:
+      operationId: deleteRoleAssingee
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: aliasInOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: roleAssigneeIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/guestbookResponses:
+    get:
+      operationId: getGuestbookResponsesByDataverse
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: guestbookId
+        in: query
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/links:
+    get:
+      operationId: listLinks
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/metadatablocks:
+    get:
+      operationId: listMetadataBlocks
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    post:
+      operationId: setMetadataBlocks
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/metadatablocks/:isRoot:
+    get:
+      operationId: getMetadataRoot_legacy
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    post:
+      operationId: setMetadataRoot_legacy
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody: {}
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/metadatablocks/isRoot:
+    get:
+      operationId: getMetadataRoot
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    put:
+      operationId: setMetadataRoot
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody: {}
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/roles:
+    get:
+      operationId: listRoles
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+    post:
+      operationId: createRole
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/RoleDTO'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{identifier}/storagesize:
+    get:
+      operationId: getStorageSize
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: includeCached
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{id}/move/{targetDataverseAlias}:
+    post:
+      operationId: moveDataverse
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: targetDataverseAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: forceMove
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{linkedDataverseAlias}/link/{linkingDataverseAlias}:
+    put:
+      operationId: linkDataverse
+      parameters:
+      - name: linkedDataverseAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkingDataverseAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+  /api/v1/dataverses/{linkingDataverseId}/deleteLink/{linkedDataverseId}:
+    delete:
+      operationId: deleteDataverseLinkingDataverse
+      parameters:
+      - name: linkingDataverseId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkedDataverseId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Dataverses
+components:
+  schemas:
+    RoleAssignmentDTO:
+      type: object
+      properties:
+        assignee:
+          type: string
+        role:
+          type: string
+    ExplicitGroupDTO:
+      type: object
+      properties:
+        description:
+          type: string
+        displayName:
+          type: string
+        aliasInOwner:
+          type: string
+    RoleDTO:
+      type: object
+      properties:
+        alias:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        ownerId:
+          type: string
+        permissions:
+          type: string

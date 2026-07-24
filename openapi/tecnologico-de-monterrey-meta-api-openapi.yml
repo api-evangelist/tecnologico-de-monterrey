@@ -1,0 +1,67 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Meta API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Meta
+paths:
+  /api/v1/meta/datafile/{fileId}:
+    get:
+      operationId: datafile
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: fileMetadataId
+        in: query
+        schema:
+          type: number
+      - name: exclude
+        in: query
+        schema:
+          type: string
+      - name: include
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            text/xml:
+              schema:
+                type: string
+          description: Default Response.
+      tags:
+      - Meta
+  /api/v1/meta/dataset/{datasetId}:
+    get:
+      operationId: dataset
+      parameters:
+      - name: datasetId
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: exclude
+        in: query
+        schema:
+          type: string
+      - name: include
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/xml:
+              schema:
+                type: string
+          description: Default Response.
+      tags:
+      - Meta

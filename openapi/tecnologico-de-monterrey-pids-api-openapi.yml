@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Pids API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Pids
+paths:
+  /api/v1/pids:
+    get:
+      operationId: getPid
+      parameters:
+      - name: persistentId
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Pids
+  /api/v1/pids/unreserved:
+    get:
+      operationId: getUnreserved
+      parameters:
+      - name: persistentId
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Pids
+  /api/v1/pids/{id}/delete:
+    delete:
+      operationId: deletePid
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Pids
+  /api/v1/pids/{id}/reserve:
+    post:
+      operationId: reservePid
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Pids

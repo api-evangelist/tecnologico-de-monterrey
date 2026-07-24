@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Metadatablocks API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Metadatablocks
+paths:
+  /api/v1/metadatablocks:
+    get:
+      operationId: list
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Metadatablocks
+  /api/v1/metadatablocks/{identifier}:
+    get:
+      operationId: getBlock
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Metadatablocks

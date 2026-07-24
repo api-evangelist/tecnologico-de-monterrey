@@ -1,0 +1,125 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Batch API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Batch
+paths:
+  /api/v1/batch/harvest:
+    get:
+      operationId: harvest
+      parameters:
+      - name: path
+        in: query
+        schema:
+          type: string
+      - name: dv
+        in: query
+        schema:
+          type: string
+      - name: createDV
+        in: query
+        schema:
+          type: boolean
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Batch
+  /api/v1/batch/import:
+    get:
+      operationId: getImport
+      parameters:
+      - name: path
+        in: query
+        schema:
+          type: string
+      - name: dv
+        in: query
+        schema:
+          type: string
+      - name: createDV
+        in: query
+        schema:
+          type: boolean
+      - name: key
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Batch
+    post:
+      operationId: postImport
+      parameters:
+      - name: dv
+        in: query
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Batch
+  /api/v1/batch/jobs/import/datasets/files/{identifier}:
+    post:
+      operationId: getFilesystemImport
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: mode
+        in: query
+        schema:
+          type: string
+          default: MERGE
+      - name: uploadFolder
+        in: query
+        schema:
+          type: string
+      - name: totalSize
+        in: query
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Batch

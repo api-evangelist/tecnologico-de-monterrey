@@ -1,0 +1,159 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Users API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Users
+paths:
+  /api/v1/users/:me:
+    get:
+      operationId: getAuthenticatedUserByToken
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Users
+  /api/v1/users/token:
+    get:
+      operationId: getTokenExpirationDate
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Users
+    delete:
+      operationId: deleteToken
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Users
+  /api/v1/users/token/recreate:
+    post:
+      operationId: recreateToken
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Users
+  /api/v1/users/{consumedIdentifier}/mergeIntoUser/{baseIdentifier}:
+    post:
+      operationId: mergeInAuthenticatedUser
+      parameters:
+      - name: consumedIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: baseIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Users
+  /api/v1/users/{identifier}/changeIdentifier/{newIdentifier}:
+    post:
+      operationId: changeAuthenticatedUserIdentifier
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: newIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Users
+  /api/v1/users/{identifier}/removeRoles:
+    post:
+      operationId: removeUserRoles
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Users
+  /api/v1/users/{identifier}/traces:
+    get:
+      operationId: getTraces
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Users
+  /api/v1/users/{identifier}/traces/{element}:
+    get:
+      operationId: getTraces
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: element
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Users

@@ -1,0 +1,86 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Search API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Search
+paths:
+  /api/v1/search:
+    get:
+      operationId: search
+      parameters:
+      - name: q
+        in: query
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: subtree
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: sort
+        in: query
+        schema:
+          type: string
+      - name: order
+        in: query
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+      - name: start
+        in: query
+        schema:
+          type: integer
+      - name: show_relevance
+        in: query
+        schema:
+          type: boolean
+      - name: show_facets
+        in: query
+        schema:
+          type: boolean
+      - name: fq
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: show_entity_ids
+        in: query
+        schema:
+          type: boolean
+      - name: show_api_urls
+        in: query
+        schema:
+          type: boolean
+      - name: show_my_data
+        in: query
+        schema:
+          type: boolean
+      - name: query_entities
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Search

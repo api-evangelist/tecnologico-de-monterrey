@@ -1,0 +1,1553 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Datasets API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Datasets
+paths:
+  /api/v1/datasets/export:
+    get:
+      operationId: exportDataset
+      parameters:
+      - name: persistentId
+        in: query
+        schema:
+          type: string
+      - name: exporter
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/xml:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+            application/html:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/listCurationStates:
+    get:
+      operationId: getCurationStates
+      responses:
+        default:
+          content:
+            text/csv:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/modifyRegistrationAll:
+    post:
+      operationId: updateDatasetTargetURLAll
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/modifyRegistrationPIDMetadataAll:
+    get:
+      operationId: updateDatasetPIDMetadataAll
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/mpupload:
+    put:
+      operationId: completeMPUpload
+      parameters:
+      - name: globalid
+        in: query
+        schema:
+          type: string
+      - name: storageidentifier
+        in: query
+        schema:
+          type: string
+      - name: uploadid
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    delete:
+      operationId: abortMPUpload
+      parameters:
+      - name: globalid
+        in: query
+        schema:
+          type: string
+      - name: storageidentifier
+        in: query
+        schema:
+          type: string
+      - name: uploadid
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{datasetId}/deleteLink/{linkedDataverseId}:
+    delete:
+      operationId: deleteDatasetLinkingDataverse
+      parameters:
+      - name: datasetId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkedDataverseId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/allowedCurationLabels:
+    get:
+      operationId: getAllowedCurationLabels
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/assignments:
+    get:
+      operationId: getAssignments
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    post:
+      operationId: createAssignment
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/RoleAssignmentDTO'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/assignments/{id}:
+    delete:
+      operationId: deleteAssignment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/curationLabelSet:
+    get:
+      operationId: getCurationLabelSet
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    put:
+      operationId: setCurationLabelSet
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    delete:
+      operationId: resetCurationLabelSet
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/dataCaptureModule/checksumValidation:
+    post:
+      operationId: receiveChecksumValidationResults
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/dataCaptureModule/rsync:
+    get:
+      operationId: getRsync
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/lock/{type}:
+    post:
+      operationId: lockDataset
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: path
+        required: true
+        schema:
+          type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/locks:
+    get:
+      operationId: getLocks
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    delete:
+      operationId: deleteLocks
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/storageDriver:
+    get:
+      operationId: getFileStore
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    put:
+      operationId: setFileStore
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    delete:
+      operationId: resetFileStore
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/storagesize:
+    get:
+      operationId: getStorageSize
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: includeCached
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/timestamps:
+    get:
+      operationId: getTimestamps
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{identifier}/versions/{versionId}/downloadsize:
+    get:
+      operationId: getDownloadSize
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}:
+    get:
+      operationId: getDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    delete:
+      operationId: deleteDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/actions/:publish:
+    get:
+      operationId: publishDataseUsingGetDeprecated
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    post:
+      operationId: publishDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      - name: assureIsIndexed
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/actions/:releasemigrated:
+    post:
+      operationId: publishMigratedDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: updatepidatprovider
+        in: query
+        schema:
+          type: boolean
+          default: 'false'
+      requestBody: {}
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/add:
+    post:
+      operationId: addFileToDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/addFiles:
+    post:
+      operationId: addFilesToDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/citationdate:
+    put:
+      operationId: setCitationDate
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    delete:
+      operationId: useDefaultCitationDate
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/curationStatus:
+    get:
+      operationId: getCurationStatus
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    put:
+      operationId: setCurationStatus
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: label
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    delete:
+      operationId: deleteCurationStatus
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/deleteMetadata:
+    put:
+      operationId: deleteVersionMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/destroy:
+    delete:
+      operationId: destroyDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/dirindex:
+    get:
+      operationId: getFileAccessFolderView
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: query
+        schema:
+          type: string
+      - name: folder
+        in: query
+        schema:
+          type: string
+      - name: original
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            text/html:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/editMetadata:
+    put:
+      operationId: editVersionMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: replace
+        in: query
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/files/actions/:set-embargo:
+    post:
+      operationId: createFileEmbargo
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/files/actions/:unset-embargo:
+    post:
+      operationId: removeFileEmbargo
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/links:
+    get:
+      operationId: getLinks
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/makeDataCount/citations:
+    get:
+      operationId: getMakeDataCountCitations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/makeDataCount/{metric}:
+    get:
+      operationId: getMakeDataCountMetricCurrentMonth
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/makeDataCount/{metric}/{yyyymm}:
+    get:
+      operationId: getMakeDataCountMetric
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: yyyymm
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: country
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/metadata:
+    get:
+      operationId: getVersionJsonLDMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Datasets
+    put:
+      operationId: updateVersionMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: replace
+        in: query
+        schema:
+          type: boolean
+          default: 'false'
+      requestBody: {}
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/metadata/delete:
+    put:
+      operationId: deleteMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody: {}
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/modifyRegistration:
+    get:
+      operationId: updateDatasetTargetURL
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/modifyRegistrationMetadata:
+    post:
+      operationId: updateDatasetPIDMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/move/{targetDataverseAlias}:
+    post:
+      operationId: moveDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: targetDataverseAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: forceMove
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/privateUrl:
+    get:
+      operationId: getPrivateUrlData
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    post:
+      operationId: createPrivateUrl
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: anonymizedAccess
+        in: query
+        schema:
+          type: boolean
+          default: 'false'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    delete:
+      operationId: deletePrivateUrl
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/returnToAuthor:
+    post:
+      operationId: returnToAuthor
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/submitForReview:
+    post:
+      operationId: submitForReview
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/thumbnail:
+    get:
+      operationId: getDatasetThumbnail
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            image/png:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    post:
+      operationId: uploadDatasetLogo
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    delete:
+      operationId: removeDatasetLogo
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/thumbnail/candidates:
+    get:
+      operationId: getDatasetThumbnailCandidates
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/thumbnail/{dataFileId}:
+    post:
+      operationId: setDataFileAsThumbnail
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dataFileId
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/uploadsid:
+    get:
+      operationId: getUploadUrl
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/uploadurls:
+    get:
+      operationId: getMPUploadUrls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: size
+        in: query
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/versions:
+    get:
+      operationId: listVersions
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/versions/{versionId}:
+    get:
+      operationId: getVersion
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    put:
+      operationId: updateDraftVersion
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+    delete:
+      operationId: deleteDraftVersion
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/versions/{versionId}/files:
+    get:
+      operationId: getVersionFiles
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/versions/{versionId}/metadata:
+    get:
+      operationId: getVersionJsonLDMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{id}/versions/{versionNumber}/metadata/{block}:
+    get:
+      operationId: getVersionMetadataBlock
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionNumber
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: block
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+  /api/v1/datasets/{linkedDatasetId}/link/{linkingDataverseAlias}:
+    put:
+      operationId: linkDataset
+      parameters:
+      - name: linkedDatasetId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkingDataverseAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Datasets
+components:
+  schemas:
+    RoleAssignmentDTO:
+      type: object
+      properties:
+        assignee:
+          type: string
+        role:
+          type: string

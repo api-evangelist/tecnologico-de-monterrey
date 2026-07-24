@@ -1,0 +1,171 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Builtin Users API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Builtin Users
+paths:
+  /api/v1/builtin-users:
+    post:
+      operationId: save
+      parameters:
+      - name: password
+        in: query
+        schema:
+          type: string
+      - name: key
+        in: query
+        schema:
+          type: string
+      - name: sendEmailNotification
+        in: query
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/BuiltinUser'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Builtin Users
+  /api/v1/builtin-users/{password}/{key}:
+    post:
+      operationId: create
+      parameters:
+      - name: password
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/BuiltinUser'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Builtin Users
+  /api/v1/builtin-users/{password}/{key}/{sendEmailNotification}:
+    post:
+      operationId: create
+      parameters:
+      - name: password
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sendEmailNotification
+        in: path
+        required: true
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/BuiltinUser'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Builtin Users
+  /api/v1/builtin-users/{username}/api-token:
+    get:
+      operationId: getApiToken
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Builtin Users
+components:
+  schemas:
+    PasswordResetData:
+      type: object
+      properties:
+        id:
+          type: number
+        token:
+          type: string
+        builtinUser:
+          $ref: '#/components/schemas/BuiltinUser'
+        created: {}
+        expires: {}
+        reason:
+          $ref: '#/components/schemas/Reason'
+    Reason:
+      enum:
+      - Ingest
+      - Workflow
+      - InReview
+      - DcmUpload
+      - finalizePublication
+      - EditInProgress
+      - FileValidationFailed
+    BuiltinUser:
+      type: object
+      properties:
+        id:
+          type: number
+        userName:
+          type: string
+        passwordEncryptionVersion:
+          type: integer
+        passwordResetData:
+          $ref: '#/components/schemas/PasswordResetData'
+        encryptedPassword:
+          type: string
+        email:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        affiliation:
+          type: string
+        position:
+          type: string

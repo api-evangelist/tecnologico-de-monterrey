@@ -1,0 +1,2565 @@
+openapi: 3.0.0
+info:
+  title: Tec de Monterrey Dataverse Native REST Access Admin API
+  version: 1.0.0
+  description: OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.
+servers:
+- url: https://datahub.tec.mx
+  description: Tecnológico de Monterrey Dataverse (datahub.tec.mx) public Native REST API
+tags:
+- name: Admin
+paths:
+  /api/v1/admin/assignee/{idtf}:
+    get:
+      operationId: findRoleAssignee
+      parameters:
+      - name: idtf
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  '/api/v1/admin/assignments/assignees/{raIdtf: .*}':
+    get:
+      operationId: getAssignmentsFor
+      parameters:
+      - name: raIdtf
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticatedUsers:
+    get:
+      operationId: listAuthenticatedUsers
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: createAuthenicatedUser
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticatedUsers/convert/builtin2oauth:
+    put:
+      operationId: builtin2oauth
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticatedUsers/convert/builtin2shib:
+    put:
+      operationId: builtin2shib
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticatedUsers/id/{id}:
+    delete:
+      operationId: deleteAuthenticatedUserById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticatedUsers/id/{id}/convertRemoteToBuiltIn:
+    put:
+      operationId: convertOAuthUserToBuiltin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticatedUsers/id/{id}/convertShibToBuiltIn:
+    put:
+      operationId: convertShibUserToBuiltin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticatedUsers/id/{id}/deactivate:
+    post:
+      operationId: deactivateAuthenticatedUserById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticatedUsers/{identifier}:
+    get:
+      operationId: getAuthenticatedUserByIdentifier
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: deleteAuthenticatedUser
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticatedUsers/{identifier}/deactivate:
+    post:
+      operationId: deactivateAuthenticatedUser
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticationProviderFactories:
+    get:
+      operationId: listAuthProviderFactories
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticationProviders:
+    get:
+      operationId: listAuthProviders
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: addProvider
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/AuthenticationProviderRow'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticationProviders/{id}:
+    get:
+      operationId: showProvider
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: deleteAuthenticationProvider
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticationProviders/{id}/:enabled:
+    post:
+      operationId: enableAuthenticationProvider_deprecated
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/authenticationProviders/{id}/enabled:
+    get:
+      operationId: checkAuthenticationProviderEnabled
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    put:
+      operationId: enableAuthenticationProvider
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/bannerMessage:
+    get:
+      operationId: getBannerMessages
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: addBannerMessage
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/bannerMessage/{id}:
+    delete:
+      operationId: deleteBannerMessage
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/bannerMessage/{id}/deactivate:
+    put:
+      operationId: deactivateBannerMessage
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/batch/jobs:
+    get:
+      operationId: listBatchJobs
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/batch/jobs/name/{jobName}:
+    get:
+      operationId: listBatchJobsByName
+      parameters:
+      - name: jobName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/batch/jobs/{jobId}:
+    get:
+      operationId: listBatchJobById
+      parameters:
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/clearMetricsCache:
+    delete:
+      operationId: clearMetricsCache
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/clearMetricsCache/{name}:
+    delete:
+      operationId: clearMetricsCacheByName
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/computeDataFileHashValue/{fileId}/algorithm/{alg}:
+    post:
+      operationId: computeDataFileHashValue
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: alg
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/confirmEmail/{userId}:
+    get:
+      operationId: getConfirmEmailToken
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: startConfirmEmailProcess
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/convertUserFromBcryptToSha1:
+    post:
+      operationId: convertUserFromBcryptToSha1
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/datafiles/integrity/fixmissingoriginalsizes:
+    get:
+      operationId: fixMissingOriginalSizes
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/datafiles/integrity/fixmissingoriginaltypes:
+    get:
+      operationId: fixMissingOriginalTypes
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/datasetfield:
+    get:
+      operationId: getAll
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/datasetfield/controlledVocabulary/subject:
+    get:
+      operationId: showControlledVocabularyForSubject
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/datasetfield/load:
+    post:
+      operationId: loadDatasetFields
+      requestBody:
+        content:
+          text/tab-separated-values:
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/datasetfield/loadNAControlledVocabularyValue:
+    get:
+      operationId: loadNAControlledVocabularyValue
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/datasetfield/loadpropertyfiles:
+    post:
+      operationId: loadLanguagePropertyFile
+      requestBody:
+        content:
+          application/zip:
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/datasetfield/{name}:
+    get:
+      operationId: getByName
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/datasets/integrity/{datasetVersionId}/fixmissingunf:
+    post:
+      operationId: fixUnf
+      parameters:
+      - name: datasetVersionId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: forceRecalculate
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/datasets/thumbnailMetadata/{id}:
+    get:
+      operationId: getDatasetThumbnailMetadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/dataverse/curationLabelSets:
+    get:
+      operationId: listCurationLabelSets
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/dataverse/storageDrivers:
+    get:
+      operationId: listStorageDrivers
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/dataverse/{alias}/addRoleAssignmentsToChildren:
+    get:
+      operationId: addRoleAssignementsToChildren
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/dataverse/{alias}/curationLabelSet:
+    get:
+      operationId: getCurationLabelSet
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    put:
+      operationId: setCurationLabelSet
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: resetCurationLabelSet
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/dataverse/{alias}/storageDriver:
+    get:
+      operationId: getStorageDriver
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    put:
+      operationId: setStorageDriver
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: resetStorageDriver
+      parameters:
+      - name: alias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/externalTools:
+    get:
+      operationId: getExternalTools
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: addExternalTool
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/externalTools/{id}:
+    get:
+      operationId: getExternalTool
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: deleteExternalTool
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/feedback:
+    post:
+      operationId: submitFeedback
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/groups/domain:
+    get:
+      operationId: listMailDomainGroups
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: createMailDomainGroup
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/groups/domain/{groupAlias}:
+    get:
+      operationId: getMailDomainGroup
+      parameters:
+      - name: groupAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    put:
+      operationId: updateMailDomainGroups
+      parameters:
+      - name: groupAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: deleteMailDomainGroup
+      parameters:
+      - name: groupAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/groups/ip:
+    get:
+      operationId: listIpGroups
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: postIpGroup
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/groups/ip/{groupIdtf}:
+    get:
+      operationId: getIpGroup
+      parameters:
+      - name: groupIdtf
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: deleteIpGroup
+      parameters:
+      - name: groupIdtf
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/groups/ip/{groupName}:
+    put:
+      operationId: putIpGroups
+      parameters:
+      - name: groupName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/groups/shib:
+    get:
+      operationId: listShibGroups
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: createShibGroup
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/groups/shib/{primaryKey}:
+    delete:
+      operationId: deleteShibGroup
+      parameters:
+      - name: primaryKey
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index:
+    get:
+      operationId: indexAllOrSubset
+      parameters:
+      - name: numPartitions
+        in: query
+        schema:
+          type: number
+      - name: partitionIdToProcess
+        in: query
+        schema:
+          type: number
+      - name: previewOnly
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/clear:
+    get:
+      operationId: clearSolrIndex
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/clear-orphans:
+    get:
+      operationId: clearOrphans
+      parameters:
+      - name: sync
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/continue:
+    get:
+      operationId: indexAllOrSubsetContinue
+      parameters:
+      - name: numPartitions
+        in: query
+        schema:
+          type: number
+      - name: partitionIdToProcess
+        in: query
+        schema:
+          type: number
+      - name: previewOnly
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/dataset:
+    get:
+      operationId: indexDatasetByPersistentId
+      parameters:
+      - name: persistentId
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/filemetadata/{dataset_id}:
+    get:
+      operationId: getFileMetadataByDatasetId
+      parameters:
+      - name: dataset_id
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      - name: order
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/filesearch:
+    get:
+      operationId: filesearch
+      parameters:
+      - name: persistentId
+        in: query
+        schema:
+          type: string
+      - name: semanticVersion
+        in: query
+        schema:
+          type: string
+      - name: q
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/mod:
+    get:
+      operationId: indexMod
+      parameters:
+      - name: partitions
+        in: query
+        schema:
+          type: number
+      - name: which
+        in: query
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/perms:
+    get:
+      operationId: indexAllPermissions
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/perms/{id}:
+    get:
+      operationId: indexPermissions
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/permsDebug:
+    get:
+      operationId: searchPermsDebug
+      parameters:
+      - name: key
+        in: query
+        schema:
+          type: string
+      - name: id
+        in: query
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/solr/schema:
+    get:
+      operationId: getSolrSchema
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: string
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/status:
+    get:
+      operationId: indexStatus
+      parameters:
+      - name: sync
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/test:
+    get:
+      operationId: searchDebug
+      parameters:
+      - name: key
+        in: query
+        schema:
+          type: string
+      - name: q
+        in: query
+        schema:
+          type: string
+      - name: fq
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/timestamps:
+    delete:
+      operationId: deleteAllTimestamps
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/timestamps/{dvObjectId}:
+    delete:
+      operationId: deleteTimestamp
+      parameters:
+      - name: dvObjectId
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/index/{type}/{id}:
+    get:
+      operationId: indexTypeById
+      parameters:
+      - name: type
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/isOrcid:
+    get:
+      operationId: isOrcidEnabled
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/list-users:
+    get:
+      operationId: filterAuthenticatedUsers
+      parameters:
+      - name: searchTerm
+        in: query
+        schema:
+          type: string
+      - name: selectedPage
+        in: query
+        schema:
+          type: integer
+      - name: itemsPerPage
+        in: query
+        schema:
+          type: integer
+      - name: sortKey
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/makeDataCount/addUsageMetricsFromSushiReport:
+    post:
+      operationId: addUsageMetricsFromSushiReportAll
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: reportOnDisk
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/makeDataCount/sendToHub:
+    post:
+      operationId: sendDataToHub
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/makeDataCount/{id}/addUsageMetricsFromSushiReport:
+    post:
+      operationId: addUsageMetricsFromSushiReport
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: reportOnDisk
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/makeDataCount/{id}/updateCitationsForDataset:
+    post:
+      operationId: updateCitationsForDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/metadata/exportAll:
+    get:
+      operationId: exportAll
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/metadata/exportOAI/{specname}:
+    put:
+      operationId: exportOaiSet
+      parameters:
+      - name: specname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/metadata/reExportAll:
+    get:
+      operationId: reExportAll
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/permissions/{dvo}:
+    get:
+      operationId: findPermissonsOn
+      parameters:
+      - name: dvo
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/publishDataverseAsCreator/{id}:
+    post:
+      operationId: publishDataverseAsCreator
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/registerDataFileAll:
+    get:
+      operationId: registerDataFileAll
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/roles:
+    get:
+      operationId: listBuiltinRoles
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: createNewBuiltinRole
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/RoleDTO'
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/roles/{id}:
+    delete:
+      operationId: deleteRole
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/savedsearches:
+    get:
+      operationId: meta
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: add
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/savedsearches/list:
+    get:
+      operationId: list
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/savedsearches/makelinks/all:
+    put:
+      operationId: makeLinksForAllSavedSearches
+      parameters:
+      - name: debug
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/savedsearches/makelinks/{id}:
+    put:
+      operationId: makeLinksForSingleSavedSearch
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: debug
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/savedsearches/{id}:
+    get:
+      operationId: show
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: delete
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/settings:
+    get:
+      operationId: listAllSettings
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/settings/{name}:
+    get:
+      operationId: getSetting
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    put:
+      operationId: putSetting
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: deleteSetting
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/settings/{name}/lang/{lang}:
+    put:
+      operationId: putSetting
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: lang
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: deleteSetting
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: lang
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/sitemap:
+    post:
+      operationId: updateSiteMap
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/storageSites:
+    get:
+      operationId: listAll
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: addSite
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/storageSites/{id}:
+    get:
+      operationId: get
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: delete
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/storageSites/{id}/primaryStorage:
+    put:
+      operationId: setPrimary
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/submitDataVersionToArchive/{id}/{version}:
+    get:
+      operationId: submitDatasetVersionToArchive
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/superuser/{identifier}:
+    post:
+      operationId: toggleSuperuser
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/test/datasets/{id}/externalTools:
+    get:
+      operationId: getExternalToolsforFile
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/test/files/{id}/externalTools:
+    get:
+      operationId: getExternalToolsForFile
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/updateHashValues/{alg}:
+    get:
+      operationId: updateHashValues
+      parameters:
+      - name: alg
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: num
+        in: query
+        schema:
+          type: integer
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/validate/dataset/files/{id}:
+    get:
+      operationId: validateDatasetDatafiles
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/validate/dataset/{id}:
+    get:
+      operationId: validateDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: variables
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/validate/datasets:
+    get:
+      operationId: validateAllDatasets
+      parameters:
+      - name: variables
+        in: query
+        schema:
+          type: boolean
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/validateDataFileHashValue/{fileId}:
+    post:
+      operationId: validateDataFileHashValue
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/validatePassword:
+    post:
+      operationId: validatePassword
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/workflows:
+    get:
+      operationId: listWorkflows
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    post:
+      operationId: addWorkflow
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: object
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/workflows/default:
+    get:
+      operationId: listDefaults
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/workflows/default/{triggerType}:
+    get:
+      operationId: getDefault
+      parameters:
+      - name: triggerType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    put:
+      operationId: setDefault
+      parameters:
+      - name: triggerType
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: deleteDefault
+      parameters:
+      - name: triggerType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/workflows/ip-whitelist:
+    get:
+      operationId: getIpWhitelist
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    put:
+      operationId: setIpWhitelist
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+    delete:
+      operationId: deleteIpWhitelist
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/workflows/{identifier}:
+    get:
+      operationId: getWorkflow
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/workflows/{id}:
+    delete:
+      operationId: deleteWorkflow
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/{id}/registerDataFile:
+    get:
+      operationId: registerDataFile
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+  /api/v1/admin/{id}/reregisterHDLToPID:
+    post:
+      operationId: reregisterHdlToPID
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: Default Response.
+      tags:
+      - Admin
+components:
+  schemas:
+    AuthenticationProviderRow:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        subtitle:
+          type: string
+        factoryAlias:
+          type: string
+        enabled:
+          type: boolean
+        factoryData:
+          type: string
+    RoleDTO:
+      type: object
+      properties:
+        alias:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        ownerId:
+          type: string
+        permissions:
+          type: string
