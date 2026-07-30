@@ -12,9 +12,21 @@ description: >-
   Education, which serves a public Native REST API and an OAI-PMH metadata
   endpoint.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/tecnologico-de-monterrey.png
 url: https://raw.githubusercontent.com/api-evangelist/tecnologico-de-monterrey/refs/heads/main/apis.yml
 tags:
   - Education
@@ -29,79 +41,503 @@ created: '2026-06-03'
 modified: '2026-06-03'
 specificationVersion: '0.19'
 apis:
-  - aid: tecnologico-de-monterrey:datahub-rest
-    name: Tec de Monterrey Dataverse Native REST API
-    description: >-
-      Public Native REST API of the Tecnológico de Monterrey research open-data
-      repository (datahub.tec.mx), running Dataverse 5.9. Supports dataset and
-      collection search and metadata retrieval. Endpoints such as
-      /api/info/version and /api/search respond publicly (HTTP 200); some
-      write/ingest operations require an API token.
-    humanURL: https://datahub.tec.mx/
-    baseURL: https://datahub.tec.mx/api
-    tags: [ Open Data, Research Data, Dataverse, REST ]
-    properties:
-      - type: Documentation
-        url: https://guides.dataverse.org/en/5.9/api/native-api.html
-      - type: OpenAPI
-        url: openapi/tecnologico-de-monterrey-datahub-rest.yaml
-      - type: JSONSchema
-        url: json-schema/tecnologico-de-monterrey-dataset-schema.json
-      - type: x-vocabulary
-        url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
-      - type: x-rules
-        url: rules/tecnologico-de-monterrey-rules.yml
-      - type: x-json-ld
-        url: json-ld/tecnologico-de-monterrey-context.jsonld
-  - aid: tecnologico-de-monterrey:datahub-oai
-    name: Tec de Monterrey Dataverse OAI-PMH Endpoint
-    description: >-
-      Public OAI-PMH 2.0 metadata harvesting endpoint for the Tecnológico de
-      Monterrey Dataverse OAI Archive. Verified live via the Identify verb
-      (repositoryName "Tecnológico de Monterrey Dataverse OAI Archive";
-      adminEmail research.datahub@servicios.tec.mx). Supports standard verbs
-      (Identify, ListRecords, ListIdentifiers, GetRecord) for harvesting dataset
-      metadata.
-    humanURL: https://datahub.tec.mx/
-    baseURL: https://datahub.tec.mx/oai
-    tags: [ Open Data, Research Data, OAI-PMH, Metadata Harvesting ]
-    properties:
-      - type: Documentation
-        url: https://guides.dataverse.org/en/5.9/api/oai.html
-  - aid: tecnologico-de-monterrey:ritec-oai
-    name: RITEC Institutional Repository OAI-PMH (DSpace)
-    description: >-
-      RITEC, the Tecnológico de Monterrey institutional repository
-      (repositorio.tec.mx), is a DSpace platform holding 80,000+ theses,
-      articles, and academic works. It is listed in OpenDOAR, ROAR, and Sherpa
-      with a documented OAI-PMH endpoint at /oai/request. Note: the host
-      returned HTTP 403 to automated/programmatic clients during verification
-      (WAF/bot protection), so the endpoint was not independently confirmed
-      live, though registry records document it.
-    humanURL: https://repositorio.tec.mx/
-    baseURL: https://repositorio.tec.mx/oai/request
-    tags: [ Institutional Repository, DSpace, OAI-PMH, Open Access, Theses ]
-    properties:
-      - type: Documentation
-        url: https://v2.sherpa.ac.uk/id/repository/3460
-  - aid: tecnologico-de-monterrey:developer-portal
-    name: Tec de Monterrey API Developer Portal (Institutional APIs)
-    description: >-
-      Institutional API developer portal at api.tec.mx hosting named API
-      products including academic progress / student grade APIs ("Boleta de
-      Calificaciones del Alumno", "Gestión del Progreso Académico del
-      Estudiante"), student management ("Gestión de Estudiantes"), human-capital
-      management ("Gestión de Capital Humano"), and billing ("Proveedor
-      Facturacion"). Access is gated: it requires account registration and
-      per-product subscription approval, and is not openly browsable without
-      authentication. No public endpoints were independently verified.
-    humanURL: https://api.tec.mx/tec-de-monterrey/api/
-    tags: [ Education, Student Information System, Academic, Gated ]
-    properties:
-      - type: Documentation
-        url: https://api.tec.mx/tec-de-monterrey/api/
-      - type: Signup
-        url: https://api.tec.mx/tec-de-monterrey/api/user/login
+- aid: tecnologico-de-monterrey:datahub-oai
+  name: Tec de Monterrey Dataverse OAI-PMH Endpoint
+  description: >-
+    Public OAI-PMH 2.0 metadata harvesting endpoint for the Tecnológico de Monterrey Dataverse OAI Archive.
+    Verified live via the Identify verb (repositoryName "Tecnológico de Monterrey Dataverse OAI Archive";
+    adminEmail research.datahub@servicios.tec.mx). Supports standard verbs (Identify, ListRecords, ListIdentifiers,
+    GetRecord) for harvesting dataset metadata.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/oai
+  tags:
+  - Open Data
+  - Research Data
+  - OAI-PMH
+  - Metadata Harvesting
+  properties:
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/oai.html
+- aid: tecnologico-de-monterrey:ritec-oai
+  name: RITEC Institutional Repository OAI-PMH (DSpace)
+  description: >-
+    RITEC, the Tecnológico de Monterrey institutional repository (repositorio.tec.mx), is a DSpace platform
+    holding 80,000+ theses, articles, and academic works. It is listed in OpenDOAR, ROAR, and Sherpa with
+    a documented OAI-PMH endpoint at /oai/request. Note: the host returned HTTP 403 to automated/programmatic
+    clients during verification (WAF/bot protection), so the endpoint was not independently confirmed
+    live, though registry records document it.
+  humanURL: https://repositorio.tec.mx/
+  baseURL: https://repositorio.tec.mx/oai/request
+  tags:
+  - Institutional Repository
+  - DSpace
+  - OAI-PMH
+  - Open Access
+  - Theses
+  properties:
+  - type: Documentation
+    url: https://v2.sherpa.ac.uk/id/repository/3460
+- aid: tecnologico-de-monterrey:developer-portal
+  name: Tec de Monterrey API Developer Portal (Institutional APIs)
+  description: >-
+    Institutional API developer portal at api.tec.mx hosting named API products including academic progress
+    / student grade APIs ("Boleta de Calificaciones del Alumno", "Gestión del Progreso Académico del Estudiante"),
+    student management ("Gestión de Estudiantes"), human-capital management ("Gestión de Capital Humano"),
+    and billing ("Proveedor Facturacion"). Access is gated: it requires account registration and per-product
+    subscription approval, and is not openly browsable without authentication. No public endpoints were
+    independently verified.
+  humanURL: https://api.tec.mx/tec-de-monterrey/api/
+  tags:
+  - Education
+  - Student Information System
+  - Academic
+  - Gated
+  properties:
+  - type: Documentation
+    url: https://api.tec.mx/tec-de-monterrey/api/
+  - type: Signup
+    url: https://api.tec.mx/tec-de-monterrey/api/user/login
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-access-api
+  name: Tecnológico de Monterrey Access API
+  description: The Access API from Tecnológico de Monterrey — 20 operation(s) for access.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Access
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-access-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-admin-api
+  name: Tecnológico de Monterrey Admin API
+  description: The Admin API from Tecnológico de Monterrey — 113 operation(s) for admin.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-admin-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-batch-api
+  name: Tecnológico de Monterrey Batch API
+  description: The Batch API from Tecnológico de Monterrey — 3 operation(s) for batch.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Batch
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-batch-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-builtin-users-api
+  name: Tecnológico de Monterrey Builtin Users API
+  description: The Builtin Users API from Tecnológico de Monterrey — 4 operation(s) for builtin users.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Builtin Users
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-builtin-users-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-datasets-api
+  name: Tecnológico de Monterrey Datasets API
+  description: The Datasets API from Tecnológico de Monterrey — 54 operation(s) for datasets.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Datasets
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-datasets-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-datatags-api
+  name: Tecnológico de Monterrey Datatags API
+  description: The Datatags API from Tecnológico de Monterrey — 1 operation(s) for datatags.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Datatags
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-datatags-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-dataverses-api
+  name: Tecnológico de Monterrey Dataverses API
+  description: The Dataverses API from Tecnológico de Monterrey — 26 operation(s) for dataverses.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Dataverses
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-dataverses-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-edit-api
+  name: Tecnológico de Monterrey Edit API
+  description: The Edit API from Tecnológico de Monterrey — 1 operation(s) for edit.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Edit
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-edit-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-files-api
+  name: Tecnológico de Monterrey Files API
+  description: The Files API from Tecnológico de Monterrey — 9 operation(s) for files.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-files-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-harvest-api
+  name: Tecnológico de Monterrey Harvest API
+  description: The Harvest API from Tecnológico de Monterrey — 7 operation(s) for harvest.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Harvest
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-harvest-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-info-api
+  name: Tecnológico de Monterrey Info API
+  description: The Info API from Tecnológico de Monterrey — 40 operation(s) for info.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Info
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-info-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-ingest-api
+  name: Tecnológico de Monterrey Ingest API
+  description: The Ingest API from Tecnológico de Monterrey — 1 operation(s) for ingest.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Ingest
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-ingest-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-mail-api
+  name: Tecnológico de Monterrey Mail API
+  description: The Mail API from Tecnológico de Monterrey — 1 operation(s) for mail.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Mail
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-mail-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-meta-api
+  name: Tecnológico de Monterrey Meta API
+  description: The Meta API from Tecnológico de Monterrey — 2 operation(s) for meta.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Meta
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-meta-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-metadatablocks-api
+  name: Tecnológico de Monterrey Metadatablocks API
+  description: >-
+    The Metadatablocks API from Tecnológico de Monterrey — 2 operation(s) for metadatablocks.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Metadatablocks
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-metadatablocks-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-mydata-api
+  name: Tecnológico de Monterrey Mydata API
+  description: The Mydata API from Tecnológico de Monterrey — 1 operation(s) for mydata.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Mydata
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-mydata-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-notifications-api
+  name: Tecnológico de Monterrey Notifications API
+  description: The Notifications API from Tecnológico de Monterrey — 1 operation(s) for notifications.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Notifications
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-notifications-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-pids-api
+  name: Tecnológico de Monterrey Pids API
+  description: The Pids API from Tecnológico de Monterrey — 4 operation(s) for pids.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Pids
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-pids-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-roles-api
+  name: Tecnológico de Monterrey Roles API
+  description: The Roles API from Tecnológico de Monterrey — 2 operation(s) for roles.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-roles-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-search-api
+  name: Tecnológico de Monterrey Search API
+  description: The Search API from Tecnológico de Monterrey — 1 operation(s) for search.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-search-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-users-api
+  name: Tecnológico de Monterrey Users API
+  description: The Users API from Tecnológico de Monterrey — 8 operation(s) for users.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-users-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
+- aid: tecnologico-de-monterrey:tecnologico-de-monterrey-workflows-api
+  name: Tecnológico de Monterrey Workflows API
+  description: The Workflows API from Tecnológico de Monterrey — 1 operation(s) for workflows.
+  humanURL: https://datahub.tec.mx/
+  baseURL: https://datahub.tec.mx/api
+  tags:
+  - Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/tecnologico-de-monterrey-workflows-api-openapi.yml
+  - type: Documentation
+    url: https://guides.dataverse.org/en/5.9/api/native-api.html
+  - type: JSONSchema
+    url: json-schema/tecnologico-de-monterrey-dataset-schema.json
+  - type: x-vocabulary
+    url: vocabulary/tecnologico-de-monterrey-vocabulary.yml
+  - type: x-rules
+    url: rules/tecnologico-de-monterrey-rules.yml
+  - type: x-json-ld
+    url: json-ld/tecnologico-de-monterrey-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/tecnologico-de-monterrey-agentic-access.yml
