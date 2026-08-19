@@ -1,0 +1,158 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tec de Monterrey Dataverse Native REST Access Users API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getAuthenticatedUserByToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/users/:me"
+          }
+        },
+        {
+          "info": {
+            "name": "getTokenExpirationDate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/users/token"
+          }
+        },
+        {
+          "info": {
+            "name": "deleteToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://datahub.tec.mx/api/v1/users/token"
+          }
+        },
+        {
+          "info": {
+            "name": "recreateToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/users/token/recreate"
+          }
+        },
+        {
+          "info": {
+            "name": "mergeInAuthenticatedUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/users/:consumedIdentifier/mergeIntoUser/:baseIdentifier",
+            "params": [
+              {
+                "name": "consumedIdentifier",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "baseIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "changeAuthenticatedUserIdentifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/users/:identifier/changeIdentifier/:newIdentifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "newIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "removeUserRoles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/users/:identifier/removeRoles",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getTraces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/users/:identifier/traces",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getTraces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/users/:identifier/traces/:element",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "element",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

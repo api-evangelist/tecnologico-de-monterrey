@@ -1,0 +1,2597 @@
+{
+  "item": [
+    {
+      "id": "4a26d242-54fd-4eab-a9e9-d3b50ffcdbb7",
+      "name": "Access",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df0c9ca8-05cb-4cac-9a12-086094de7ea8",
+          "name": "datafile Bundle",
+          "request": {
+            "name": "datafile Bundle",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                "bundle",
+                ":fileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fileMetadataId",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23586653-e2ff-4896-9681-ef2b60195817",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    "bundle",
+                    ":fileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fileMetadataId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "837a42d2-3c57-4b94-9fe8-909087465a46",
+          "name": "datafile",
+          "request": {
+            "name": "datafile",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":fileId:.+"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7ac8801a-e8c6-4b0f-8a76-aba99e65c49b",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":fileId:.+"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <downloadInfo>\n    <dataFile>\n    </dataFile>\n    <authUserName>(string)</authUserName>\n    <authMethod>(string)</authMethod>\n    <accessGranted>(boolean)</accessGranted>\n    <accessPermissionsApply>(boolean)</accessPermissionsApply>\n    <accessRestrictionsApply>(boolean)</accessRestrictionsApply>\n    <passAccessPermissions>(boolean)</passAccessPermissions>\n    <passAccessRestrictions>(boolean)</passAccessRestrictions>\n    <optionalServicesAvailable>\n    </optionalServicesAvailable>\n  </downloadInfo>\n  <conversionParam>(string)</conversionParam>\n  <conversionParamValue>(string)</conversionParamValue>\n  <auxiliaryFile>\n    <id>(number)</id>\n    <dataFile>\n    </dataFile>\n    <formatTag>(string)</formatTag>\n    <formatVersion>(string)</formatVersion>\n    <origin>(string)</origin>\n    <isPublic>(boolean)</isPublic>\n    <contentType>(string)</contentType>\n    <fileSize>(number)</fileSize>\n    <checksum>(string)</checksum>\n    <type>(string)</type>\n  </auxiliaryFile>\n  <command>\n    <datasetService>\n    </datasetService>\n    <dataverseService>\n    </dataverseService>\n    <rolesService>\n    </rolesService>\n    <usersService>\n    </usersService>\n    <indexService>\n      <rootDataverseName>(string)</rootDataverseName>\n    </indexService>\n    <indexBatchService>\n    </indexBatchService>\n    <solrIndexService>\n      <unpublishedDataRelatedToMeModeEnabled>(boolean)</unpublishedDataRelatedToMeModeEnabled>\n    </solrIndexService>\n    <searchService>\n    </searchService>\n    <ingestService>\n    </ingestService>\n    <permissionService>\n    </permissionService>\n    <dvObjectService>\n    </dvObjectService>\n    <dataverseFacetService>\n    </dataverseFacetService>\n    <featuredDataverseService>\n    </featuredDataverseService>\n    <dataFileService>\n    </dataFileService>\n    <templateService>\n    </templateService>\n    <savedSearchService>\n      <resultString>(string)</resultString>\n    </savedSearchService>\n    <fieldTypeInputLevels>\n    </fieldTypeInputLevels>\n    <doiEZId>\n    </doiEZId>\n    <doiDataCite>\n    </doiDataCite>\n    <fakePidProvider>\n    </fakePidProvider>\n    <handleNet>\n    </handleNet>\n    <settings>\n    </settings>\n    <guestbookService>\n    </guestbookService>\n    <responses>\n    </responses>\n    <dvLinking>\n    </dvLinking>\n    <dsLinking>\n    </dsLinking>\n    <explicitGroups>\n    </explicitGroups>\n    <groups>\n    </groups>\n    <roleAssignees>\n    </roleAssignees>\n    <userNotificationService>\n    </userNotificationService>\n    <authentication>\n    </authentication>\n    <systemConfig>\n      <saneDefaultForSolrHostColonPort>(string)</saneDefaultForSolrHostColonPort>\n    </systemConfig>\n    <privateUrlService>\n    </privateUrlService>\n    <datasetVersionService>\n    </datasetVersionService>\n    <dataCaptureModule>\n    </dataCaptureModule>\n    <logSvc>\n    </logSvc>\n    <workflowService>\n    </workflowService>\n    <fileDownloadService>\n    </fileDownloadService>\n    <confirmEmailService>\n    </confirmEmailService>\n    <innerEngine>\n    </innerEngine>\n  </command>\n  <dataverseRequestService>\n    <dataverseSessionSvc>\n      <statusDismissed>(boolean)</statusDismissed>\n      <dismissedMessages>\n      </dismissedMessages>\n      <debug>(boolean)</debug>\n      <localeCode>(string)</localeCode>\n    </dataverseSessionSvc>\n    <dataverseRequest>\n      <invocationId>(string)</invocationId>\n    </dataverseRequest>\n  </dataverseRequestService>\n  <gbr>\n    <id>(number)</id>\n    <guestbook>\n      <id>(number)</id>\n      <customQuestions>\n      </customQuestions>\n      <name>(string)</name>\n      <enabled>(boolean)</enabled>\n      <nameRequired>(boolean)</nameRequired>\n      <emailRequired>(boolean)</emailRequired>\n      <institutionRequired>(boolean)</institutionRequired>\n      <positionRequired>(boolean)</positionRequired>\n      <deletable>(boolean)</deletable>\n      <usageCount>(number)</usageCount>\n      <usageCountDataverse>(number)</usageCountDataverse>\n      <responseCount>(number)</responseCount>\n      <responseCountDataverse>(number)</responseCountDataverse>\n    </guestbook>\n    <dataFile>\n    </dataFile>\n    <dataset>\n    </dataset>\n    <datasetVersion>\n      <id>(number)</id>\n      <UNF>(string)</UNF>\n      <version>(number)</version>\n      <versionNumber>(number)</versionNumber>\n      <minorVersionNumber>(number)</minorVersionNumber>\n      <versionNote>(string)</versionNote>\n      <fileMetadatas>\n      </fileMetadatas>\n      <datasetFields>\n      </datasetFields>\n      <archiveNote>(string)</archiveNote>\n      <archivalCopyLocation>(string)</archivalCopyLocation>\n      <deaccessionLink>(string)</deaccessionLink>\n      <contributorNames>(string)</contributorNames>\n      <jsonLd>(string)</jsonLd>\n      <datasetVersionUsers>\n      </datasetVersionUsers>\n      <workflowComments>\n      </workflowComments>\n      <externalStatusLabel>(string)</externalStatusLabel>\n    </datasetVersion>\n    <authenticatedUser>\n      <id>(number)</id>\n      <userIdentifier>(string)</userIdentifier>\n      <email>(string)</email>\n      <affiliation>(string)</affiliation>\n      <position>(string)</position>\n      <lastName>(string)</lastName>\n      <firstName>(string)</firstName>\n      <superuser>(boolean)</superuser>\n      <deactivated>(boolean)</deactivated>\n      <shibIdentityProvider>(string)</shibIdentityProvider>\n      <notifications>\n      </notifications>\n      <requests>\n      </requests>\n      <datasetLocks>\n      </datasetLocks>\n      <oAuth2TokenDatas>\n      </oAuth2TokenDatas>\n      <roles>(string)</roles>\n      <authProviderId>(string)</authProviderId>\n      <authProviderFactoryAlias>(string)</authProviderFactoryAlias>\n    </authenticatedUser>\n    <fileDownload>\n      <id>(number)</id>\n      <selectedFileIds>(string)</selectedFileIds>\n      <fileFormat>(string)</fileFormat>\n      <downloadtype>(string)</downloadtype>\n      <sessionId>(string)</sessionId>\n    </fileDownload>\n    <customQuestionResponses>\n    </customQuestionResponses>\n    <name>(string)</name>\n    <email>(string)</email>\n    <institution>(string)</institution>\n    <position>(string)</position>\n    <writeResponse>(boolean)</writeResponse>\n    <externalTool>\n      <id>(number)</id>\n      <displayName>(string)</displayName>\n      <toolName>(string)</toolName>\n      <description>(string)</description>\n      <externalToolTypes>\n      </externalToolTypes>\n      <toolUrl>(string)</toolUrl>\n      <toolParameters>(string)</toolParameters>\n      <contentType>(string)</contentType>\n    </externalTool>\n  </gbr>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c21b0661-aff4-4a7c-aad5-db507895e710",
+          "name": "list Datafile Metadata Aux",
+          "request": {
+            "name": "list Datafile Metadata Aux",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":fileId",
+                "auxiliary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "afbe015c-0c0a-4b80-aae2-32d54c5cb513",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "auxiliary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01bdb9ef-e7ff-46ba-8de7-4dd3fb7cdfbb",
+          "name": "download Auxiliary File",
+          "request": {
+            "name": "download Auxiliary File",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":fileId",
+                "auxiliary",
+                ":formatTag",
+                ":formatVersion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "formatTag",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "formatVersion",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cee8d446-d9ea-48f7-8ed0-59886b349767",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "auxiliary",
+                    ":formatTag",
+                    ":formatVersion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "formatTag",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "formatVersion",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"extraArguments\": \"\",\n  \"downloadInfo\": {\n    \"dataFile\": {\n      \"contentType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"checksumType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"checksumValue\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"rootDataFileId\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previousDataFileId\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"filesize\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"restricted\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"provEntityName\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataTables\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"auxiliaryFiles\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestReports\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestRequest\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataFileTags\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileMetadatas\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"guestbookResponses\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestStatus\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"thumbnailForDataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"embargo\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"deleted\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"markedAsDuplicate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"duplicateFilename\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileAccessRequesters\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"owner\": \"\",\n      \"publicationDate\": \"\",\n      \"releaseUser\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"createDate\": \"\",\n      \"modificationTime\": \"\",\n      \"indexTime\": \"\",\n      \"permissionModificationTime\": \"\",\n      \"permissionIndexTime\": \"\",\n      \"storageIdentifier\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dtype\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"protocol\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authority\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"globalIdCreateTime\": \"\",\n      \"identifier\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"identifierRegistered\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"alternativePersistentIndentifiers\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previewImageAvailable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"creator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssignments\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mergeable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"authUserName\": \"string\",\n    \"authMethod\": \"string\",\n    \"accessGranted\": true,\n    \"accessPermissionsApply\": false,\n    \"accessRestrictionsApply\": false,\n    \"passAccessPermissions\": false,\n    \"passAccessRestrictions\": false,\n    \"optionalServicesAvailable\": {}\n  },\n  \"conversionParam\": \"string\",\n  \"conversionParamValue\": \"string\",\n  \"auxiliaryFile\": {\n    \"id\": 685.6605166474017,\n    \"dataFile\": {\n      \"contentType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"checksumType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"checksumValue\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"rootDataFileId\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previousDataFileId\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"filesize\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"restricted\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"provEntityName\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataTables\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"auxiliaryFiles\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestReports\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestRequest\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataFileTags\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileMetadatas\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"guestbookResponses\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestStatus\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"thumbnailForDataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"embargo\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"deleted\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"markedAsDuplicate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"duplicateFilename\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileAccessRequesters\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"owner\": \"\",\n      \"publicationDate\": \"\",\n      \"releaseUser\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"createDate\": \"\",\n      \"modificationTime\": \"\",\n      \"indexTime\": \"\",\n      \"permissionModificationTime\": \"\",\n      \"permissionIndexTime\": \"\",\n      \"storageIdentifier\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dtype\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"protocol\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authority\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"globalIdCreateTime\": \"\",\n      \"identifier\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"identifierRegistered\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"alternativePersistentIndentifiers\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previewImageAvailable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"creator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssignments\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mergeable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"formatTag\": \"string\",\n    \"formatVersion\": \"string\",\n    \"origin\": \"string\",\n    \"isPublic\": false,\n    \"contentType\": \"string\",\n    \"fileSize\": 800.9543330648361,\n    \"checksum\": \"string\",\n    \"type\": \"string\"\n  },\n  \"command\": {\n    \"datasetService\": {\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"doiEZIdServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"versionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authentication\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"recordService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"commandEngine\": {\n        \"value\": \"<Circular reference to #/components/schemas/EjbDataverseEngine detected>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\"\n    },\n    \"dataverseService\": {\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrIndexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseLinkingService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetLinkingService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"groupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"rolesService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"session\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\"\n    },\n    \"rolesService\": {\n      \"em\": \"\",\n      \"roleAssigneeService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrIndexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexAsync\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"usersService\": {\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"passwordResetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\"\n    },\n    \"indexService\": {\n      \"em\": \"\",\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseUserServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"searchPermissionsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrIndexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dsLinkingService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvLinkingService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrClientService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataFileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"variableService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexBatchService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetFieldService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"rootDataverseName\": \"string\",\n      \"rootDataverseCached\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrServer\": {\n        \"value\": \"reference #/components/schemas/SolrClient not found in the OpenAPI spec\"\n      },\n      \"variableMetadataUtil\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"indexBatchService\": {\n      \"em\": \"\",\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrIndexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"solrIndexService\": {\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"searchPermissionsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"rolesSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrClientService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"unpublishedDataRelatedToMeModeEnabled\": true\n    },\n    \"searchService\": {\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetVersionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetFieldService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"groupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrClientService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"ingestService\": {\n      \"variableService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fieldService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"queue\": \"\",\n      \"factory\": \"\"\n    },\n    \"permissionService\": {\n      \"userService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authenticationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssigneeService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjectServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"workflowService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\",\n      \"groupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"session\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvRequestService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"dvObjectService\": {\n      \"em\": \"\"\n    },\n    \"dataverseFacetService\": {\n      \"em\": \"\",\n      \"dataverses\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"featuredDataverseService\": {\n      \"em\": \"\",\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"dataFileService\": {\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"embargoService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\"\n    },\n    \"templateService\": {\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\"\n    },\n    \"savedSearchService\": {\n      \"searchService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"commandEngine\": {\n        \"value\": \"<Circular reference to #/components/schemas/EjbDataverseEngine detected>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"resultString\": \"string\",\n      \"em\": \"\"\n    },\n    \"fieldTypeInputLevels\": {\n      \"em\": \"\"\n    },\n    \"doiEZId\": {\n      \"ezidService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ezidServiceRequest\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"baseURLString\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"USERNAME\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PASSWORD\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"commandEngine\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datafileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"doiDataCite\": {\n      \"doiDataCiteRegisterService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"commandEngine\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datafileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"fakePidProvider\": {\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"commandEngine\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datafileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"handleNet\": {\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"handlenetIndex\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"commandEngine\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datafileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"settings\": {\n      \"em\": \"\",\n      \"actionLogSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"guestbookService\": {\n      \"em\": \"\"\n    },\n    \"responses\": {\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\"\n    },\n    \"dvLinking\": {\n      \"em\": \"\",\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"dsLinking\": {\n      \"em\": \"\"\n    },\n    \"explicitGroups\": {\n      \"roleAssigneeSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\",\n      \"provider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"groups\": {\n      \"ipGroupsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"shibGroupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"explicitGroupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mailDomainGroupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"groupProviders\": \"\",\n      \"ipGroupProvider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"shibGroupProvider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"explicitGroupProvider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mailDomainGroupProvider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssigneeSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"roleAssignees\": {\n      \"em\": \"\",\n      \"authSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"groupSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"explicitGroupSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseRoleService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"predefinedRoleAssignees\": \"\"\n    },\n    \"userNotificationService\": {\n      \"mailService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\"\n    },\n    \"authentication\": {\n      \"authProvidersRegistrationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"builtinUserServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"actionLogSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userNotificationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"confirmEmailService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"passwordResetServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"passwordValidatorService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssigneeSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"gbRespSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetVersionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"explicitGroupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"savedSearchService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\"\n    },\n    \"systemConfig\": {\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authenticationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"saneDefaultForSolrHostColonPort\": \"string\"\n    },\n    \"privateUrlService\": {\n      \"em\": \"\",\n      \"datasetServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"datasetVersionService\": {\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datafileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\"\n    },\n    \"dataCaptureModule\": {},\n    \"em\": \"\",\n    \"logSvc\": {\n      \"em\": \"\"\n    },\n    \"workflowService\": {\n      \"em\": \"\",\n      \"datasets\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settings\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssignees\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userNotificationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"engine\": {\n        \"value\": \"<Circular reference to #/components/schemas/EjbDataverseEngine detected>\"\n      },\n      \"dvRequestService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"providers\": \"\"\n    },\n    \"fileDownloadService\": {\n      \"em\": \"\",\n      \"guestbookResponseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetVersionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datafileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userNotificationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"privateUrlService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"session\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"commandEngine\": {\n        \"value\": \"<Circular reference to #/components/schemas/EjbDataverseEngine detected>\"\n      },\n      \"dvRequestService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileDownloadHelper\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mdcLogService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"confirmEmailService\": {\n      \"authenticationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mailService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": \"\"\n    },\n    \"innerEngine\": {\n      \"ejbCtxt\": \"\"\n    },\n    \"ejbCtxt\": \"\",\n    \"ctxt\": {\n      \"value\": \"reference #/components/schemas/CommandContext not found in the OpenAPI spec\"\n    }\n  },\n  \"dataverseRequestService\": {\n    \"dataverseSessionSvc\": {\n      \"user\": {\n        \"value\": \"reference #/components/schemas/User not found in the OpenAPI spec\"\n      },\n      \"permissionsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"usersSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"logSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsWrapper\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"headerFragment\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"bannerMessageService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authenticationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"statusDismissed\": false,\n      \"dismissedMessages\": {},\n      \"debug\": false,\n      \"localeCode\": \"string\"\n    },\n    \"request\": \"\",\n    \"dataverseRequest\": {\n      \"user\": {\n        \"value\": \"reference #/components/schemas/User not found in the OpenAPI spec\"\n      },\n      \"sourceAddress\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"invocationId\": \"string\"\n    }\n  },\n  \"gbr\": {\n    \"id\": 476.5766708544894,\n    \"guestbook\": {\n      \"id\": 6004.013138809159,\n      \"dataverse\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"customQuestions\": {},\n      \"name\": \"string\",\n      \"enabled\": false,\n      \"nameRequired\": true,\n      \"emailRequired\": true,\n      \"institutionRequired\": false,\n      \"positionRequired\": true,\n      \"createTime\": \"\",\n      \"deletable\": true,\n      \"usageCount\": 3945.162751392658,\n      \"usageCountDataverse\": 7427.991374163685,\n      \"responseCount\": 9351.674161258561,\n      \"responseCountDataverse\": 7555.545956327178\n    },\n    \"dataFile\": {\n      \"contentType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"checksumType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"checksumValue\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"rootDataFileId\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previousDataFileId\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"filesize\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"restricted\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"provEntityName\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataTables\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"auxiliaryFiles\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestReports\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestRequest\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataFileTags\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileMetadatas\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"guestbookResponses\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestStatus\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"thumbnailForDataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"embargo\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"deleted\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"markedAsDuplicate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"duplicateFilename\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileAccessRequesters\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"owner\": \"\",\n      \"publicationDate\": \"\",\n      \"releaseUser\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"createDate\": \"\",\n      \"modificationTime\": \"\",\n      \"indexTime\": \"\",\n      \"permissionModificationTime\": \"\",\n      \"permissionIndexTime\": \"\",\n      \"storageIdentifier\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dtype\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"protocol\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authority\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"globalIdCreateTime\": \"\",\n      \"identifier\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"identifierRegistered\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"alternativePersistentIndentifiers\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previewImageAvailable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"creator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssignments\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mergeable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"dataset\": {\n      \"files\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"lastExportTime\": \"\",\n      \"versions\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetLocks\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"thumbnailFile\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetMetrics\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetExternalCitations\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"useGenericThumbnail\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"guestbook\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetLinkingDataverses\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileAccessRequest\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataFileCategories\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"citationDateDatasetFieldType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"harvestedFrom\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"harvestIdentifier\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"storageDriver\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"metadataLanguage\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"externalLabelSetName\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"owner\": \"\",\n      \"publicationDate\": \"\",\n      \"releaseUser\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"createDate\": \"\",\n      \"modificationTime\": \"\",\n      \"indexTime\": \"\",\n      \"permissionModificationTime\": \"\",\n      \"permissionIndexTime\": \"\",\n      \"storageIdentifier\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dtype\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"protocol\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authority\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"globalIdCreateTime\": \"\",\n      \"identifier\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"identifierRegistered\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"alternativePersistentIndentifiers\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previewImageAvailable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"creator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssignments\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mergeable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"datasetVersion\": {\n      \"id\": 689.3346337127115,\n      \"UNF\": \"string\",\n      \"version\": 4035.790372029677,\n      \"versionNumber\": 1336.21100965994,\n      \"minorVersionNumber\": 270.4895269211394,\n      \"versionNote\": \"string\",\n      \"versionState\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileMetadatas\": {},\n      \"termsOfUseAndAccess\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetFields\": {},\n      \"createTime\": \"\",\n      \"lastUpdateTime\": \"\",\n      \"releaseTime\": \"\",\n      \"archiveTime\": \"\",\n      \"archiveNote\": \"string\",\n      \"archivalCopyLocation\": \"string\",\n      \"deaccessionLink\": \"string\",\n      \"contributorNames\": \"string\",\n      \"jsonLd\": \"string\",\n      \"datasetVersionUsers\": {},\n      \"workflowComments\": {},\n      \"externalStatusLabel\": \"string\",\n      \"dvd\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"authenticatedUser\": {\n      \"id\": 7699.295703599467,\n      \"userIdentifier\": \"string\",\n      \"email\": \"string\",\n      \"affiliation\": \"string\",\n      \"position\": \"string\",\n      \"lastName\": \"string\",\n      \"firstName\": \"string\",\n      \"emailConfirmed\": \"\",\n      \"createdTime\": \"\",\n      \"lastLoginTime\": \"\",\n      \"lastApiUseTime\": \"\",\n      \"cart\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"superuser\": true,\n      \"deactivated\": true,\n      \"deactivatedTime\": \"\",\n      \"shibIdentityProvider\": \"string\",\n      \"notifications\": {},\n      \"requests\": {},\n      \"datasetLocks\": {},\n      \"oAuth2TokenDatas\": {},\n      \"roles\": \"string\",\n      \"authProviderId\": \"string\",\n      \"authProviderFactoryAlias\": \"string\",\n      \"authenticatedUserLookup\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"fileDownload\": {\n      \"id\": 1733.8230135181832,\n      \"guestbookResponse\": {\n        \"value\": \"<Circular reference to #/components/schemas/GuestbookResponse detected>\"\n      },\n      \"downloadTimestamp\": \"\",\n      \"selectedFileIds\": \"string\",\n      \"fileFormat\": \"string\",\n      \"downloadtype\": \"string\",\n      \"sessionId\": \"string\"\n    },\n    \"customQuestionResponses\": {},\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"institution\": \"string\",\n    \"position\": \"string\",\n    \"responseTime\": \"\",\n    \"writeResponse\": false,\n    \"externalTool\": {\n      \"id\": 9936.00461438827,\n      \"displayName\": \"string\",\n      \"toolName\": \"string\",\n      \"description\": \"string\",\n      \"externalToolTypes\": {},\n      \"scope\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"toolUrl\": \"string\",\n      \"toolParameters\": \"string\",\n      \"contentType\": \"string\"\n    }\n  },\n  \"requestUriInfo\": \"\",\n  \"requestHttpHeaders\": \"\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31c3cf8b-0e82-4daa-bb76-0ccce2fc3443",
+          "name": "save Auxiliary File With Version",
+          "request": {
+            "name": "save Auxiliary File With Version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":fileId",
+                "auxiliary",
+                ":formatTag",
+                ":formatVersion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "formatTag",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "formatVersion",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "0",
+                  "value": "<",
+                  "type": "text",
+                  "description": "undefined"
+                },
+                {
+                  "key": "1",
+                  "value": "s",
+                  "type": "text",
+                  "description": "undefined"
+                },
+                {
+                  "key": "2",
+                  "value": "t",
+                  "type": "text",
+                  "description": "undefined"
+                },
+                {
+                  "key": "3",
+                  "value": "r",
+                  "type": "text",
+                  "description": "undefined"
+                },
+                {
+                  "key": "4",
+                  "value": "i",
+                  "type": "text",
+                  "description": "undefined"
+                },
+                {
+                  "key": "5",
+                  "value": "n",
+                  "type": "text",
+                  "description": "undefined"
+                },
+                {
+                  "key": "6",
+                  "value": "g",
+                  "type": "text",
+                  "description": "undefined"
+                },
+                {
+                  "key": "7",
+                  "value": ">",
+                  "type": "text",
+                  "description": "undefined"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2560fc2b-62b4-451c-b135-d9656652a5e9",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "auxiliary",
+                    ":formatTag",
+                    ":formatVersion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "formatTag",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "formatVersion",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "undefined",
+                        "type": "text/plain"
+                      },
+                      "key": "0",
+                      "value": "<",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "undefined",
+                        "type": "text/plain"
+                      },
+                      "key": "1",
+                      "value": "s",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "undefined",
+                        "type": "text/plain"
+                      },
+                      "key": "2",
+                      "value": "t",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "undefined",
+                        "type": "text/plain"
+                      },
+                      "key": "3",
+                      "value": "r",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "undefined",
+                        "type": "text/plain"
+                      },
+                      "key": "4",
+                      "value": "i",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "undefined",
+                        "type": "text/plain"
+                      },
+                      "key": "5",
+                      "value": "n",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "undefined",
+                        "type": "text/plain"
+                      },
+                      "key": "6",
+                      "value": "g",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "undefined",
+                        "type": "text/plain"
+                      },
+                      "key": "7",
+                      "value": ">",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "076e50b8-0837-400d-be16-4346c22b5379",
+          "name": "delete Auxiliary File With Version",
+          "request": {
+            "name": "delete Auxiliary File With Version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":fileId",
+                "auxiliary",
+                ":formatTag",
+                ":formatVersion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "formatTag",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "formatVersion",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b3d21e9-9f6f-49af-b76c-bbefaaf0d67f",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "auxiliary",
+                    ":formatTag",
+                    ":formatVersion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "formatTag",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "formatVersion",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d870c79-2cff-43ee-9d18-abbd8d2ae254",
+          "name": "list Datafile Metadata Aux By Origin",
+          "request": {
+            "name": "list Datafile Metadata Aux By Origin",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":fileId",
+                "auxiliary",
+                ":origin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "origin",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2389495c-351b-4c3b-82ec-7edd441ae26d",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "auxiliary",
+                    ":origin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "origin",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ccae8d3-0aab-4724-8bcf-3c0524143446",
+          "name": "tabular Datafile Metadata",
+          "request": {
+            "name": "tabular Datafile Metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":fileId",
+                "metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fileMetadataId",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b9b3bef-55a9-4cba-8eae-aca69aa423e3",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fileMetadataId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "exclude",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d85000f-7b86-4f40-aefd-7d2f0812c931",
+          "name": "tabular Datafile Metadata DDI",
+          "request": {
+            "name": "tabular Datafile Metadata DDI",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":fileId",
+                "metadata",
+                "ddi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fileMetadataId",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "73fd9d44-f47d-4cc1-8d7d-4f5d032d3255",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "metadata",
+                    "ddi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fileMetadataId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "exclude",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5feda35e-316f-4a8f-9865-4dd5f8a8e97b",
+          "name": "grant File Access",
+          "request": {
+            "name": "grant File Access",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":id",
+                "grantAccess",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "identifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54792147-8bf8-4332-ae18-7d611ebcc935",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":id",
+                    "grantAccess",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a033daf0-ae72-435e-8907-317c8b395884",
+          "name": "list File Access Requests",
+          "request": {
+            "name": "list File Access Requests",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":id",
+                "listRequests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d56617d7-cfb1-47f8-adce-ca77befe9da2",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":id",
+                    "listRequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c135cb11-6988-4f7f-b1ea-0d88305f2d1f",
+          "name": "reject File Access",
+          "request": {
+            "name": "reject File Access",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":id",
+                "rejectAccess",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "identifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4b565f69-2b06-439c-b1ec-80dabd84d0ce",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":id",
+                    "rejectAccess",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b7e1cd2-1107-42c9-bdfb-a5d32b5897ce",
+          "name": "request File Access",
+          "request": {
+            "name": "request File Access",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":id",
+                "requestAccess"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8b605e9-9ecf-405c-a60f-a1aaea99d921",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":id",
+                    "requestAccess"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78221606-8e46-4fc2-bdf9-69249986e79c",
+          "name": "revoke File Access",
+          "request": {
+            "name": "revoke File Access",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafile",
+                ":id",
+                "revokeAccess",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "identifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2418caf-139c-4e2c-958a-f0a053a8f8f0",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafile",
+                    ":id",
+                    "revokeAccess",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ee8978b2-0031-48a0-b38a-1e13b2d4735e",
+          "name": "post Download Datafiles",
+          "request": {
+            "name": "post Download Datafiles",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              },
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "f2d336d3-c42e-445a-ad39-13c5f3a93e5e",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>"
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "201efc84-5013-4745-8096-9047feca9f9d",
+          "name": "datafiles",
+          "request": {
+            "name": "datafiles",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "datafiles",
+                ":fileIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileIds",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41db4bc4-62b9-4570-8b62-94e64d2be3ac",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "datafiles",
+                    ":fileIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileIds",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "acb700a5-4ebd-4765-95c1-b86ea7d82094",
+          "name": "download All From Latest",
+          "request": {
+            "name": "download All From Latest",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "dataset",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7dcba46f-2d05-4707-b2aa-4fd537bd86f7",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "dataset",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "098d4115-59c4-4fde-a9c2-3d83ee02239f",
+          "name": "download All From Version",
+          "request": {
+            "name": "download All From Version",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "dataset",
+                ":id",
+                "versions",
+                ":versionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "versionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dce969c8-dbfb-4776-8908-9e9c8ee3bfb9",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "dataset",
+                    ":id",
+                    "versions",
+                    ":versionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ebc04b8d-080d-421e-8340-c73077fcef8d",
+          "name": "ds Card Image",
+          "request": {
+            "name": "ds Card Image",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "dsCardImage",
+                ":versionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "versionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/png"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2fc71ddf-6295-4d9e-a9bd-895eda3beab0",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "dsCardImage",
+                    ":versionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/png"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/png"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6154bcee-db7f-4421-91a2-2293e92df8b2",
+          "name": "dv Card Image",
+          "request": {
+            "name": "dv Card Image",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "dvCardImage",
+                ":dataverseId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "dataverseId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/png"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8006788d-fb41-4a18-9e7c-bf00e450428f",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "dvCardImage",
+                    ":dataverseId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "dataverseId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/png"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/png"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a369246-0765-4ae2-8d3c-20600e7adfd1",
+          "name": "file Card Image",
+          "request": {
+            "name": "file Card Image",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                "fileCardImage",
+                ":fileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/png"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "deccbded-d387-4268-a436-a23b7c4cbaa1",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    "fileCardImage",
+                    ":fileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/png"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/png"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "443c7cce-253b-4924-bc8c-a0326d01b1a0",
+          "name": "allow Access Request",
+          "request": {
+            "name": "allow Access Request",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "access",
+                ":id",
+                "allowAccessRequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "090c7f46-d584-400b-82e8-6da5c5ad86cb",
+              "name": "Default Response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "access",
+                    ":id",
+                    "allowAccessRequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>"
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://datahub.tec.mx",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e1742b6a-a342-4406-b31f-06c3178869b4",
+    "name": "Tec de Monterrey Dataverse Native REST Access API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI 3.0 description served live by the Tecnológico de Monterrey research open-data repository (datahub.tec.mx), running Dataverse 5.9. Retrieved from https://datahub.tec.mx/openapi. Internal deployment server URLs in the source document were replaced with the public base URL; paths and schemas are unmodified.",
+      "type": "text/plain"
+    }
+  }
+}

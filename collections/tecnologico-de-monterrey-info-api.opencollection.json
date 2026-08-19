@@ -1,0 +1,800 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tec de Monterrey Dataverse Native REST Access Info API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Info",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getTermsOfUse",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/apiTermsOfUse"
+          }
+        },
+        {
+          "info": {
+            "name": "getDatasetsAllTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/datasets",
+            "params": [
+              {
+                "name": "dataLocation",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDatasetsBySubject",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/datasets/bySubject",
+            "params": [
+              {
+                "name": "dataLocation",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDatasetsBySubjectToMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/datasets/bySubject/toMonth/:yyyymm",
+            "params": [
+              {
+                "name": "yyyymm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dataLocation",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDatasetsTimeSeriest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/datasets/monthly",
+            "params": [
+              {
+                "name": "dataLocation",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDatasetsPastDays",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/datasets/pastDays/:days",
+            "params": [
+              {
+                "name": "days",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dataLocation",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDatasetsToMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/datasets/toMonth/:yyyymm",
+            "params": [
+              {
+                "name": "yyyymm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dataLocation",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDataversesAllTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/dataverses",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDataversesByCategory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/dataverses/byCategory",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDataversesBySubject",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/dataverses/bySubject",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDataversesTimeSeries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/dataverses/monthly",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDataversesPastDays",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/dataverses/pastDays/:days",
+            "params": [
+              {
+                "name": "days",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDataversesToMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/dataverses/toMonth/:yyyymm",
+            "params": [
+              {
+                "name": "yyyymm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDownloadsAllTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/downloads",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDownloadsTimeSeries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/downloads/monthly",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDownloadsPastDays",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/downloads/pastDays/:days",
+            "params": [
+              {
+                "name": "days",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDownloadsToMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/downloads/toMonth/:yyyymm",
+            "params": [
+              {
+                "name": "yyyymm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getFileDownloadsAllTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/filedownloads",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getFileDownloadsTimeSeries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/filedownloads/monthly",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getFileDownloadsToMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/filedownloads/toMonth/:yyyymm",
+            "params": [
+              {
+                "name": "yyyymm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getFilesAllTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/files",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getFilesByType",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/files/byType",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getFilesByTypeTimeSeries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/files/byType/monthly",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getFilesTimeSeries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/files/monthly",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getFilesPastDays",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/files/pastDays/:days",
+            "params": [
+              {
+                "name": "days",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getFilesToMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/files/toMonth/:yyyymm",
+            "params": [
+              {
+                "name": "yyyymm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getMakeDataCountMetricCurrentMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/makeDataCount/:metric",
+            "params": [
+              {
+                "name": "metric",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getMakeDataCountMetricTimeSeries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/makeDataCount/:metric/monthly",
+            "params": [
+              {
+                "name": "metric",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getMakeDataCountMetricToMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/makeDataCount/:metric/toMonth/:yyyymm",
+            "params": [
+              {
+                "name": "metric",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "yyyymm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDataversesTree",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/tree",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getDataversesTreeToMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/tree/toMonth/:yyyymm",
+            "params": [
+              {
+                "name": "yyyymm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getUniqueDownloadsAllTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/uniquedownloads",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getUniqueDownloadsTimeSeries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/uniquedownloads/monthly",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getUniqueDownloadsToMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/uniquedownloads/toMonth/:yyyymm",
+            "params": [
+              {
+                "name": "yyyymm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getUniqueFileDownloadsAllTime",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/uniquefiledownloads",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getUniqueFileDownloadsTimeSeries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/uniquefiledownloads/monthly",
+            "params": [
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getUniqueFileDownloadsToMonth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/metrics/uniquefiledownloads/toMonth/:yyyymm",
+            "params": [
+              {
+                "name": "yyyymm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "parentAlias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getServer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/server"
+          }
+        },
+        {
+          "info": {
+            "name": "getDatasetPublishPopupCustomText",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/settings/:DatasetPublishPopupCustomText"
+          }
+        },
+        {
+          "info": {
+            "name": "getInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/info/version"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

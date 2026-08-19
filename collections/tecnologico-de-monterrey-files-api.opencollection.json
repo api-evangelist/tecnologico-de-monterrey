@@ -1,0 +1,271 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tec de Monterrey Dataverse Native REST Access Files API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getFileMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/metadata",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "versionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "updateFileMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/metadata",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getFileMetadataDraft",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/metadata/draft",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "versionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "getProvFreeForm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/prov-freeform",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "addProvFreeForm",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/prov-freeform",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "getProvJson",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/prov-json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "addProvJson",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/prov-json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entityName",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "deleteProvJson",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/prov-json",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "redetectDatafile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/redetect",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dryRun",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "reingest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/reingest",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "replaceFileInDataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/replace",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "restrictFileInDataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/restrict",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "uningestDatafile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/files/:id/uningest",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

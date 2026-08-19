@@ -1,0 +1,556 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tec de Monterrey Dataverse Native REST Access API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Access",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "datafileBundle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/bundle/:fileId",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fileMetadataId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "gbrecs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "datafile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:fileId:.+",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "gbrecs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "listDatafileMetadataAux",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:fileId/auxiliary",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "downloadAuxiliaryFile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:fileId/auxiliary/:formatTag/:formatVersion",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "formatTag",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "formatVersion",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "saveAuxiliaryFileWithVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:fileId/auxiliary/:formatTag/:formatVersion",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "formatTag",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "formatVersion",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "deleteAuxiliaryFileWithVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:fileId/auxiliary/:formatTag/:formatVersion",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "formatTag",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "formatVersion",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "listDatafileMetadataAuxByOrigin",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:fileId/auxiliary/:origin",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "origin",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "tabularDatafileMetadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:fileId/metadata",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fileMetadataId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "exclude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "tabularDatafileMetadataDDI",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:fileId/metadata/ddi",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fileMetadataId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "exclude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "grantFileAccess",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:id/grantAccess/:identifier",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "listFileAccessRequests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:id/listRequests",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "rejectFileAccess",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:id/rejectAccess/:identifier",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "requestFileAccess",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:id/requestAccess",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "revokeFileAccess",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://datahub.tec.mx/api/v1/access/datafile/:id/revokeAccess/:identifier",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "postDownloadDatafiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datahub.tec.mx/api/v1/access/datafiles",
+            "params": [
+              {
+                "name": "gbrecs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "datafiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/datafiles/:fileIds",
+            "params": [
+              {
+                "name": "fileIds",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "gbrecs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "downloadAllFromLatest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/dataset/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "gbrecs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "downloadAllFromVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/dataset/:id/versions/:versionId",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "versionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "gbrecs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "dsCardImage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/dsCardImage/:versionId",
+            "params": [
+              {
+                "name": "versionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "dvCardImage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/dvCardImage/:dataverseId",
+            "params": [
+              {
+                "name": "dataverseId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "fileCardImage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datahub.tec.mx/api/v1/access/fileCardImage/:fileId",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "allowAccessRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://datahub.tec.mx/api/v1/access/:id/allowAccessRequest",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
