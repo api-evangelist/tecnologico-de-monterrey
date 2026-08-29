@@ -557,6 +557,9 @@ apis:
   - type: x-json-ld
     url: json-ld/tecnologico-de-monterrey-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/tecnologico-de-monterrey-capability-edges.yml
+    name: Tecnológico de Monterrey Business Capability Map
   - type: AgenticAccess
     url: agentic-access/tecnologico-de-monterrey-agentic-access.yml
   - type: DomainSecurity
