@@ -2,14 +2,20 @@
   "repo": "tecnologico-de-monterrey",
   "feeds": [
     {
+      "source": "https://github.com/tecnologico-de-monterrey-oficial",
+      "feed_url": "https://github.com/tecnologico-de-monterrey-oficial",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
       "source": "https://datahub.tec.mx/",
       "feed_url": "https://datahub.tec.mx/",
-      "title": "Tecnol\u00f3gico de Monterrey Dataverse (datahub.tec.mx)",
+      "title": "",
       "saved": 0,
-      "method": "none",
-      "error": "parse_failed"
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-08-30T22:05:13Z"
+  "fetched": "2026-09-06T19:17:18Z"
 }
