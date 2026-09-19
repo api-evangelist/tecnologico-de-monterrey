@@ -194,6 +194,11 @@ apis:
   - Identity Federation
   - SAML
   - OpenID Connect
+  - SSO
+  tags_raw:
+  - Identity Federation
+  - SAML
+  - OpenID Connect
   - Single Sign-On
   properties:
   - type: x-saml-metadata
@@ -216,6 +221,10 @@ apis:
   tags:
   - Identity Federation
   - SAML
+  - SSO
+  tags_raw:
+  - Identity Federation
+  - SAML
   - Single Sign-On
   properties:
   - type: x-saml-metadata
@@ -234,6 +243,11 @@ apis:
   humanURL: https://repositorio.tec.mx/
   baseURL: https://repositorio.tec.mx/Shibboleth.sso/Metadata
   tags:
+  - Identity Federation
+  - Shibboleth
+  - SAML
+  - SSO
+  tags_raw:
   - Identity Federation
   - Shibboleth
   - SAML
