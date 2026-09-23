@@ -1,20 +1,49 @@
 {
+  "x-generated": "2026-09-01",
+  "x-method": "derived",
+  "x-source": "https://datahub.tec.mx/api/search?q=*&type=dataset",
+  "x-authorship": "Written by API Evangelist tooling, not by Tecnologico de Monterrey. Derived from a live probed response of the institution-operated Dataverse deployment, not from the Dataverse software OpenAPI.",
   "$schema": "https://json-structure.org/meta/core/v0/#",
   "$id": "https://datahub.tec.mx/structure/searchitem.json",
   "name": "SearchItem",
   "description": "JSON Structure for a single item returned by GET /api/v1/search on the Tecnológico de Monterrey Dataverse Native REST API (datahub.tec.mx).",
   "type": "object",
   "properties": {
-    "name": { "type": "string" },
-    "type": { "type": "string" },
-    "url": { "type": "string", "format": "uri" },
-    "global_id": { "type": "string" },
-    "description": { "type": "string" },
-    "published_at": { "type": "string", "format": "date-time" },
-    "publisher": { "type": "string" },
-    "citation": { "type": "string" },
-    "identifier_of_dataverse": { "type": "string" },
-    "name_of_dataverse": { "type": "string" }
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "global_id": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "citation": {
+      "type": "string"
+    },
+    "identifier_of_dataverse": {
+      "type": "string"
+    },
+    "name_of_dataverse": {
+      "type": "string"
+    }
   },
-  "required": ["name", "type"]
+  "required": [
+    "name",
+    "type"
+  ]
 }

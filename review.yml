@@ -3,8 +3,84 @@ name: Tecnológico de Monterrey
 description: Tecnológico de Monterrey public developer/API footprint review for APIs.json cataloging.
 url: https://raw.githubusercontent.com/api-evangelist/tecnologico-de-monterrey/refs/heads/main/review.yml
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-09-01'
 reviews:
+  - date: '2026-09-01'
+    rating: 3
+    summary: >-
+      University pipeline re-profile. Operator attribution was settled before anything was saved,
+      and the result reverses the June reading in two directions at once. UP: RITEC
+      (repositorio.tec.mx) is NOT bot-blocked at the API layer — it is a live DSpace 8.0 with a
+      public HAL+JSON REST API over 86,310 objects and a working OAI-PMH endpoint at the DSpace 7+
+      path /server/oai/request (the old /oai/request 301s there); and the institution operates a
+      substantial, fully public identity surface that the June profile missed entirely — two SAML
+      2.0 IdPs on its own domains (fs.itesm.mx AD FS, amfs.tec.mx NetIQ Access Manager) and a
+      Shibboleth SP in front of RITEC, plus DataCite (ITESM, prefix 10.57687), Crossref (25649,
+      prefix 10.46530) and ROR (03ayjn504) registrations. DOWN: api.tec.mx is now NXDOMAIN on three
+      public resolvers — the institutional developer portal has been decommissioned since June — and
+      the 22 OpenAPIs held here were 22 tag-splits of one runtime-generated Dataverse document whose
+      live title is "Deployed Resources" with internal Payara servers. That contract is the
+      Dataverse project's, not the institution's; it and 44 derived collections were removed. The
+      institution authors no OpenAPI. Its footprint is real infrastructure it runs, not software it
+      wrote, and the profile now says so.
+    endpoints:
+      - url: https://datahub.tec.mx/api/info/version
+        status: 200
+        note: Dataverse Native REST API; still {"version":"5.9","build":"750-fb24c87"}
+      - url: https://datahub.tec.mx/api/search?q=*&type=dataset
+        status: 200
+        note: 40 public datasets; DOIs under prefix 10.57687
+      - url: https://datahub.tec.mx/openapi
+        status: 200
+        note: 'LIVE but NOT the institution''s: info.title "Deployed Resources", servers prod031azms01.itesm.mx:8080 — Payara/MicroProfile runtime output, identical across Dataverse installs'
+      - url: https://datahub.tec.mx/oai?verb=Identify
+        status: 200
+        note: OAI-PMH 2.0; adminEmail research.datahub@servicios.tec.mx
+      - url: https://repositorio.tec.mx/server/api
+        status: 200
+        note: 'CORRECTION to 2026-06-03: DSpace 8.0 REST API is public and keyless — dspaceName "Repositorio Institucional del Tecnológico de Monterrey"'
+      - url: https://repositorio.tec.mx/server/oai/request?verb=Identify
+        status: 200
+        note: 'CORRECTION to 2026-06-03: OAI-PMH answers 200 at the DSpace 7+ path; the old /oai/request 301s here'
+      - url: https://repositorio.tec.mx/
+        status: 200
+        note: Human UI sits behind an Anubis bot challenge; API and OAI paths are unchallenged
+      - url: https://repositorio.tec.mx/Shibboleth.sso/Metadata
+        status: 200
+        note: Shibboleth SP metadata, application/samlmetadata+xml
+      - url: https://fs.itesm.mx/FederationMetadata/2007-06/FederationMetadata.xml
+        status: 200
+        note: Institution AD FS IdP; entityID http://fs.itesm.mx/adfs/services/trust
+      - url: https://fs.itesm.mx/adfs/.well-known/openid-configuration
+        status: 200
+        note: OIDC discovery, issuer https://fs.itesm.mx/adfs
+      - url: https://amfs.tec.mx/nidp/saml2/metadata
+        status: 200
+        note: Second institution IdP (NetIQ Access Manager); found via the RITEC Shibboleth redirect
+      - url: https://login.microsoftonline.com/tec.mx/federationmetadata/2007-06/federationmetadata.xml
+        status: 200
+        note: Entra tenant c65a3ea6-0f7c-400b-8934-5a6dc1705645, covers tec.mx and itesm.mx
+      - url: https://api.datacite.org/providers/itesm
+        status: 200
+        note: DataCite consortium organization ITESM; 3 repositories, 896 DOIs total
+      - url: https://api.crossref.org/members/25649
+        status: 200
+        note: Crossref member, prefix 10.46530, 430 DOIs
+      - url: https://api.ror.org/organizations/03ayjn504
+        status: 200
+        note: ROR record; domain tec.mx, established 1943
+      - url: https://api.tec.mx/tec-de-monterrey/api/
+        status: 0
+        note: 'REGRESSION since 2026-06-03: NXDOMAIN on 8.8.8.8, 1.1.1.1 and 9.9.9.9 — developer portal decommissioned; pointers removed as dead'
+      - url: https://tec.mx/en/academic-integrity/artificial-intelligence
+        status: 200
+        note: Institutional AI policy surface (11 guidelines); Spanish PDF for faculty also live
+      - url: https://tec.mx/llms.txt
+        status: 404
+        note: No llms.txt
+      - url: https://tec.mx/.well-known/security.txt
+        status: 404
+        note: No security.txt
   - date: '2026-06-03'
     rating: 3
     summary: >-

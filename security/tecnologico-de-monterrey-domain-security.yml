@@ -1,22 +1,22 @@
-generated: '2026-07-11'
+generated: '2026-09-01'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
 - host: tec.mx
   https: true
   tls_version: TLSv1.3
-  cert_expires: Aug 18 23:59:59 2026 GMT
+  cert_expires: Nov  6 00:31:19 2026 GMT
   hsts: true
   hsts_max_age: 31536000
 - host: datahub.tec.mx
   https: true
   tls_version: TLSv1.3
-  cert_expires: Aug 18 23:59:59 2026 GMT
+  cert_expires: Jan 22 23:59:59 2027 GMT
   hsts: false
 - host: repositorio.tec.mx
   https: true
   tls_version: TLSv1.3
-  cert_expires: Jul 29 23:59:59 2026 GMT
+  cert_expires: Jan 27 23:59:59 2027 GMT
   hsts: null
 domains:
 - domain: tec.mx

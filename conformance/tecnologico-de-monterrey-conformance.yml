@@ -1,0 +1,133 @@
+# authorship: written by API Evangelist from live probes of institution-operated hosts.
+# Every hit below is evidenced by a fetched URL and a status code. REWARD-ONLY:
+# a standard with no probed evidence is recorded as `absent`, never inferred.
+x-method: probed
+specification: API Evangelist Conformance
+specificationVersion: '0.1'
+provider: Tecnológico de Monterrey
+providerId: tecnologico-de-monterrey
+regime: education
+generated: '2026-09-01'
+method: probed
+source: live HTTP probes of tec.mx, itesm.mx, datahub.tec.mx and repositorio.tec.mx
+description: >-
+  Domain-standard conformance for Tecnológico de Monterrey against the Kin Score `education`
+  regime standards[]. Four standards are evidenced by live machine-readable surfaces the
+  institution operates on its own registrable domains (tec.mx, itesm.mx): OAI-PMH, SAML,
+  Shibboleth and DataCite, plus Crossref as a registry membership. The remaining education
+  standards were probed and are recorded as absent rather than assumed.
+standards:
+- id: oai-pmh
+  status: conformant
+  x-operator: institution
+  detail: >-
+    Two independent OAI-PMH 2.0 endpoints, both on institution-owned hosts, both answering the
+    Identify verb with an institution-named repositoryName and an institutional adminEmail.
+  evidence:
+  - url: https://datahub.tec.mx/oai?verb=Identify
+    status: 200
+    location: Identify/repositoryName = "Tecnológico de Monterrey Dataverse OAI Archive"; adminEmail = research.datahub@servicios.tec.mx
+  - url: https://datahub.tec.mx/oai?verb=ListMetadataFormats
+    status: 200
+    location: metadataPrefix = Datacite, oai_dc, oai_ddi, oai_datacite, dataverse_json
+  - url: https://repositorio.tec.mx/server/oai/request?verb=Identify
+    status: 200
+    location: Identify/repositoryName = "Repositorio Institucional del Tecnológico de Monterrey"; repositoryIdentifier = repositorio.tec.mx
+  - url: https://repositorio.tec.mx/server/oai/request?verb=ListMetadataFormats
+    status: 200
+    location: metadataPrefix = didl, mods, ore, mets, xoai, dim, rioxx, uketd_dc, qdc, oai_dc, rdf, marc, etdms
+- id: saml
+  status: conformant
+  x-operator: institution
+  detail: >-
+    Two SAML 2.0 identity providers operated on the institution's own registrable domains, each
+    publishing signed SAML 2.0 metadata. fs.itesm.mx is the AD FS IdP that login.microsoftonline.com
+    names as the authoritative auth endpoint for the tec.mx and itesm.mx domains; amfs.tec.mx is a
+    NetIQ Access Manager IdP that the RITEC repository redirects to for institutional sign-in.
+  evidence:
+  - url: https://fs.itesm.mx/FederationMetadata/2007-06/FederationMetadata.xml
+    status: 200
+    location: 'Content-Type application/samlmetadata+xml; EntityDescriptor entityID="http://fs.itesm.mx/adfs/services/trust"'
+  - url: https://amfs.tec.mx/nidp/saml2/metadata
+    status: 200
+    location: 'EntityDescriptor entityID="https://amfs.tec.mx/nidp/saml2/metadata"'
+  - url: https://login.microsoftonline.com/getuserrealm.srf?login=someone@tec.mx&json=1
+    status: 200
+    location: 'NameSpaceType "Federated"; AuthURL https://fs.itesm.mx/adfs/ls/; FederationBrandName "Instituto Tecnologico y de Estudios Superiores de Monterrey"'
+- id: shibboleth
+  status: conformant
+  x-operator: institution
+  detail: >-
+    A Shibboleth Service Provider runs in front of the RITEC institutional repository on the
+    institution's own host. The DSpace REST API advertises it in a WWW-Authenticate header and the
+    SP publishes SAML metadata at the standard Shibboleth.sso/Metadata path.
+  evidence:
+  - url: https://repositorio.tec.mx/server/api/authn/status
+    status: 200
+    location: 'response header WWW-Authenticate: shibboleth realm="DSpace REST API", location="https://repositorio.tec.mx/Shibboleth.sso/Login?target=...%2Fauthn%2Fshibboleth"'
+  - url: https://repositorio.tec.mx/Shibboleth.sso/Metadata
+    status: 200
+    location: Content-Type application/samlmetadata+xml
+  - url: https://repositorio.tec.mx/server/api/authn/shibboleth
+    status: 302
+    status_note: unfollowed status; following the redirect chain ends 200 at the IdP sign-in page
+    location: 302 to https://amfs.tec.mx/nidp/saml2/sso?SAMLRequest=...
+- id: datacite
+  status: conformant
+  x-operator: registry
+  detail: >-
+    Tecnológico de Monterrey is a DataCite consortium organization (symbol ITESM) with prefix
+    10.57687 and three registered repositories. The Dataverse OAI endpoint additionally serves
+    DataCite metadata formats, so the DOIs are machine-harvestable in the standard's own schema.
+  evidence:
+  - url: https://api.datacite.org/providers/itesm
+    status: 200
+    location: 'symbol ITESM; memberType consortium_organization; rorId https://ror.org/03ayjn504; isActive true'
+  - url: https://api.datacite.org/prefixes/10.57687
+    status: 200
+    location: providers[].id = itesm; clients[].id = itesm.ojevlu
+  - url: https://api.datacite.org/clients?provider-id=itesm
+    status: 200
+    location: 'itesm.ojevlu (Datahub, 566 DOIs), itesm.fzkcqk (RITEC, 226 DOIs), itesm.zidcct (Ediciones, 104 DOIs)'
+  - url: https://datahub.tec.mx/oai?verb=ListMetadataFormats
+    status: 200
+    location: metadataPrefix includes oai_datacite and Datacite
+- id: crossref
+  status: conformant
+  x-operator: registry
+  detail: >-
+    Registered Crossref member 25649 with prefix 10.46530 and 430 deposited DOIs, used for the
+    institution's journal and book publishing output.
+  evidence:
+  - url: https://api.crossref.org/members/25649
+    status: 200
+    location: 'primary-name "Instituto Tecnologico y de Estudios Superiores de Monterrey"; prefixes ["10.46530"]; total-dois 430'
+- id: orcid
+  status: absent
+  detail: >-
+    Probed and not configured. The RITEC DSpace 8 deployment exposes the ORCID integration
+    property but it carries no client id, so no ORCID authority or member API integration is live.
+  evidence:
+  - url: https://repositorio.tec.mx/server/api/config/properties/orcid.application-client-id
+    status: 200
+    location: '"values": [] — empty, integration not configured'
+- id: scim
+  status: absent
+  detail: No SCIM 2.0 provisioning endpoint was found on any institution-owned host.
+- id: lti
+  status: absent
+  detail: >-
+    No public LTI platform or tool registration surface was reachable; the institution's LMS is
+    behind authentication and publishes no public LTI configuration.
+- id: oneroster
+  status: absent
+  detail: No OneRoster surface found.
+- id: ed-fi
+  status: absent
+  detail: No Ed-Fi surface found; Ed-Fi is a US K-12/state-system standard and is out of scope for a Mexican HEI.
+- id: caliper
+  status: absent
+  detail: No Caliper Analytics event surface found.
+- id: qti
+  status: absent
+  detail: No QTI assessment interchange surface found.

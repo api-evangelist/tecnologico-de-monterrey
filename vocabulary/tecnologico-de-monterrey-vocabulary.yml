@@ -1,3 +1,9 @@
+# authorship: written by API Evangelist tooling, NOT by Tecnologico de Monterrey.
+# Terms describe the Dataverse data model as deployed at datahub.tec.mx; the product
+# vocabulary is the Dataverse project's, the deployment is the institution's.
+x-generated: '2026-09-01'
+x-method: derived
+x-source: https://datahub.tec.mx/api/search?q=*&type=dataset + Dataverse 5.9 data model
 vocabulary:
   name: Tecnológico de Monterrey Dataverse Vocabulary
   description: >-

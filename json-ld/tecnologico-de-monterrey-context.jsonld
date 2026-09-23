@@ -1,4 +1,8 @@
 {
+  "x-generated": "2026-09-01",
+  "x-method": "derived",
+  "x-source": "https://datahub.tec.mx/api/search?q=*&type=dataset",
+  "x-authorship": "Written by API Evangelist tooling, not by Tecnologico de Monterrey. Derived from a live probed response of the institution-operated Dataverse deployment, not from the Dataverse software OpenAPI.",
   "@context": {
     "@version": 1.1,
     "schema": "https://schema.org/",
